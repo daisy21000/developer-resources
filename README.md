@@ -30,7 +30,17 @@ Developer Toolkit is a web application built with Django to assist developers wi
 
 ## UX Design
 
+### External User's Goal
 
+The user seeks resources to aid in web development with the ability to log in and add their own and favourite them for easy access. The user expects the website to be organised and responsive for all screen sizes.
+
+### Site Owner's Goal
+
+The site owner wants to create a website for developers to access helpful resources shared by fellow developers to aid them in their work. The information will be stored in a database and curated to ensure that all the content is relevant and appropriate.
+
+### User Stories
+
+The user stories for the project, along with acceptance criteria and tasks, can be found on the <a target="_blank" href="https://github.com/users/daisy21000/projects/8/views/1">project board</a>.
 
 ## Agile
 
