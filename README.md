@@ -26,7 +26,7 @@
 
 ## Introduction
 
-
+Developer Toolkit is a web application built with Django to assist developers with helpful resources. This project has been built with HTML, CSS, JavaScript and Bootstrap 5 for the front-end and Python and Django for the back-end. Users are able to see resources as well as being able create, update and delete their own.
 
 ## UX Design
 
