@@ -64,6 +64,10 @@ The user stories for the project, along with acceptance criteria and tasks, can 
 
 ## AI Implementation
 
+I have used AI throughout the creation of this project to assist me with various different tasks.
 
+### User stories
+
+AI helped refine user stories and write acceptance criteria and tasks. I modified them to suit the project and implemented recommendations given about the user stories to make them more effective.
 
 ## Credits
