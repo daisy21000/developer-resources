@@ -1,12 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
-{% for resource in resources %}
-    <h2>{{ resource.name }}</h2>
-    <p>{{ resource.description }}</p>
-    <a href="{{ resource.url }}">{{ resource.url }}</a>
-    <p>Category: {{ resource.category.name }}</p>
-    <p>Uploaded by: {{ resource.uploader.username }}</p>
-    <p>Keywords: {{ resource.keywords.all|join:", " }}</p>
-    <hr>
+{% for category in categories %}
+    <h2>{{ category.name }}</h2>
+    <a href="{% url 'category_detail' category.id %}">View Resources</a>
 {% endfor %}
 {% endblock %}
