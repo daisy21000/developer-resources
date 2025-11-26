@@ -1,19 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Developer Toolkit</title>
-</head>
-<body>
-    {% for resource in resources %}
-        <h2>{{ resource.name }}</h2>
-        <p>{{ resource.description }}</p>
-        <a href="{{ resource.url }}">{{ resource.url }}</a>
-        <p>Category: {{ resource.category.name }}</p>
-        <p>Uploaded by: {{ resource.uploader.username }}</p>
-        <p>Keywords: {{ resource.keywords.all|join:", " }}</p>
-        <hr>
-    {% endfor %}
-</body>
-</html>
+{% extends "base.html" %}
+{% block content %}
+{% for resource in resources %}
+    <h2>{{ resource.name }}</h2>
+    <p>{{ resource.description }}</p>
+    <a href="{{ resource.url }}">{{ resource.url }}</a>
+    <p>Category: {{ resource.category.name }}</p>
+    <p>Uploaded by: {{ resource.uploader.username }}</p>
+    <p>Keywords: {{ resource.keywords.all|join:", " }}</p>
+    <hr>
+{% endfor %}
+{% endblock %}
