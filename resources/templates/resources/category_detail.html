@@ -9,7 +9,7 @@
         <ul class="list-group my-4">
             {% for resource in resources %}
                 <li class="list-group-item">
-                    <a href="#{{ resource.id }}Modal" class="list-group-item-action" data-bs-toggle="modal">
+                    <a href="#{{ resource.id }}Modal" class="list-group-item-action resource-link" data-bs-toggle="modal">
                         <h2 class="h4">{{ resource.name }}</h2>
                     </a>
                 </li>
@@ -38,8 +38,7 @@
         <p><strong>Keywords: </strong>{{ resource.keywords.all|join:", " }}</p>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <a href="{{ resource.url }}" type="button" class="btn btn-primary">Visit Site</a>
+        <a href="{{ resource.url }}" type="button" class="btn primary-button">Visit Site</a>
       </div>
     </div>
   </div>
