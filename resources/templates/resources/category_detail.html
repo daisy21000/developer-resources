@@ -1,13 +1,49 @@
 {% extends "base.html" %}
 {% block content %}
-<h1>{{ category.name }}</h1>
+<div class="container">
+    <div class="row text-center">
+        <h1 class="mt-4">{{ category.name }}</h1>
+    </div>
+    <div class="row">
+        <div class="col">
+        <ul class="list-group my-4">
+            {% for resource in resources %}
+                <li class="list-group-item">
+                    <a href="#{{ resource.id }}Modal" class="list-group-item-action" data-bs-toggle="modal">
+                        <h2 class="h4">{{ resource.name }}</h2>
+                    </a>
+                </li>
+            {% endfor %}
+        </ul>
+        </div>
+    </div>
+</div>
 {% for resource in resources %}
-    <h2>{{ resource.name }}</h2>
-    <p>{{ resource.description }}</p>
-    <a href="{{ resource.url }}">{{ resource.url }}</a>
-    <p>Category: {{ resource.category.name }}</p>
-    <p>Uploaded by: {{ resource.uploader.username }}</p>
-    <p>Keywords: {{ resource.keywords.all|join:", " }}</p>
-    <hr>
+<!-- Modal Start -->
+<div class="modal fade" id="{{ resource.id }}Modal" tabindex="-1" aria-labelledby="{{ resource.id }}ModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 class="modal-title fs-5" id="{{ resource.id }}ModalLabel">{{ resource.name }}</h3>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p><strong>Description: </strong>{{ resource.description }}</p>
+        <p>
+            <strong>URL: </strong>
+            <a href="{{ resource.url }}">{{ resource.url }}</a>
+        </p>
+        <p><strong>Category: </strong>{{ resource.category.name }}</p>
+        <p><strong>Uploaded by: </strong>{{ resource.uploader.username }}</p>
+        <p><strong>Keywords: </strong>{{ resource.keywords.all|join:", " }}</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <a href="{{ resource.url }}" type="button" class="btn btn-primary">Visit Site</a>
+      </div>
+    </div>
+  </div>
+</div>
 {% endfor %}
+<!-- Modal End -->
 {% endblock %}
