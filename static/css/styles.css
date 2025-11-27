@@ -56,6 +56,27 @@ h1, h2, h3, h4, h5, h6 {
     text-decoration: underline;
 }
 
+/* Index Page Styles */
+
+.category-card {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.category-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.category-link {
+    text-decoration: none;
+    color: var(--text-color);
+}
+
+.category-link:hover {
+    text-decoration: underline;
+}
+
 /* Footer Styles */
 
 .footer-icon {
