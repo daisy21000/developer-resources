@@ -122,6 +122,8 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+ACCOUNT_SESSION_REMEMBER = False
+
 ACCOUNT_EMAIL_VERIFICATION = 'none'
 
 # Internationalization
