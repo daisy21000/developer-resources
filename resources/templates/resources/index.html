@@ -1,7 +1,32 @@
 {% extends "base.html" %}
 {% block content %}
-{% for category in categories %}
-    <h2>{{ category.name }}</h2>
-    <a href="{% url 'category_detail' category.id %}">View Resources</a>
+<div class="container">
+    <div class="row">
+        <div class="col text-center">
+            <h1 class="mt-4">Developer Toolkit</h1>
+            <p class="lead">Helpful resources by developers, for developers.</p>
+        </div>
+    </div>
+    <div class="row mb-4">
+        <div class="col text-center">
+            <a class="btn primary-button" href="#" role="button">Add New Resource</a>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12 text-center my-4">
+            <h2>Categories</h2>
+        </div>
+        {% for category in categories %}
+        <div class="col-sm-6 col-md-4 col-lg-3 mb-3 text-center">
+            <div class="card">
+                <div class="card-body">
+                    <a href="{% url 'category_detail' category.id %}">
+                        <h3 class="card-title">{{ category.name }}</h3>
+                    </a>
+                </div>
+            </div>
+        </div>
 {% endfor %}
+    </div>
+</div>
 {% endblock %}
