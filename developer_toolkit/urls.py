@@ -19,6 +19,7 @@ from django.urls import path, include
 from resources import urls as resource_urls
 
 urlpatterns = [
+    path('accounts/', include('allauth.urls')),
     path('admin/', admin.site.urls),
     path('', include(resource_urls), name='resources_urls'),
 ]

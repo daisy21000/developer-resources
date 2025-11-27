@@ -1,4 +1,7 @@
 {% url 'index' as home_url %}
+{% url 'account_login' as login_url %}
+{% url 'account_signup' as signup_url %}
+{% url 'account_logout' as logout_url %}
 {% load static %}
 
 <!DOCTYPE html>
@@ -35,12 +38,21 @@
                     <li class="nav-item">
                         <a class="nav-link" aria-current="page" href="#">Add Resource</a>
                     </li>
+                    {% if user.is_authenticated %}
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Login</a>
+                        <a class="nav-link" href="{{ logout_url }}">Logout</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Register</a>
+                        <a class="nav-link disabled" aria-disabled="true">Favourites</a>
                     </li>
+                    {% else %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ login_url }}">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ signup_url }}">Register</a>
+                    </li>
+                    {% endif %}
                     <li class="nav-item">
                         <a class="nav-link disabled" aria-disabled="true">Contact</a>
                     </li>
