@@ -17,8 +17,24 @@ body {
     font-family: var(--body-font);
     background-color: var(--background-color);
     color: var(--text-color);
+    /* Styles for the footer to stay at the bottom of the page */
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 h1, h2, h3, h4, h5, h6 {
     font-family: var(--heading-font);
+}
+
+/* Footer Styles */
+
+.footer-icon {
+    font-size: 1.5rem;
+    color: var(--text-color);
+    transition: color 0.2s;
+}
+
+.footer-icon:hover {
+    color: var(--primary-color);
 }
