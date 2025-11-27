@@ -27,6 +27,11 @@ h1, h2, h3, h4, h5, h6 {
     font-family: var(--heading-font);
 }
 
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
 /* Button Styles */
 
 .primary-button {
@@ -83,6 +88,13 @@ h1, h2, h3, h4, h5, h6 {
     color: var(--text-color);
 }
 
+/* Signup Page Styles */
+
+.signup ul {
+    text-align: left;
+    padding-left: 15%;
+}
+
 /* Footer Styles */
 
 .footer-icon {
@@ -93,4 +105,18 @@ h1, h2, h3, h4, h5, h6 {
 
 .footer-icon:hover {
     color: var(--primary-color);
+}
+
+/* Media Queries */
+
+/* Small Screens (<576px) */
+@media (max-width: 576px) {
+    /* Responsive styles for signup page */
+    .signup input {
+        width: 100%;
+    }
+
+    .signup ul {
+        padding-left: 0;
+    }
 }
