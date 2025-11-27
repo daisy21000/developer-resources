@@ -1,0 +1,12 @@
+/* CSS Variables */
+
+:root {
+    --primary-color: #87CEEB;
+    --secondary-color: #A3C9A8;
+    --background-color: #E0E0E0;
+    --text-color: #333333;
+    --highlight-color-one: #FF6F61;
+    --highlight-color-two: #FFD800;
+    --body-font: 'Montserrat', sans-serif;
+    --heading-font: 'Roboto Mono', monospace;
+}
