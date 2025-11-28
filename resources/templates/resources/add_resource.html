@@ -4,6 +4,7 @@
 {% block content %}
 <div class="container">
     <div class="row text-center">
+        {% if user.is_authenticated %}
 <h1 class="my-4">Add New Resource</h1>
 <p class="lead">Contribute a new resource to the Developer Toolkit.</p>
 </div>
@@ -16,5 +17,9 @@
 </form>
 </div>
 </div>
+        {% else %}
+        <h1 class="my-4">Authentication Required</h1>
+        <p>Please <a href="{% url 'account_login' %}">log in</a> to submit a new resource.</p>
+        {% endif %}
 </div>
 {% endblock content %}
