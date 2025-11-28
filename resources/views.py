@@ -44,3 +44,31 @@ def submit_resource(request):
         'form': form,
     }
     return render(request, 'resources/add_resource.html', context)
+
+
+def edit_resource(request, resource_id):
+    resource = Resource.objects.get(id=resource_id)
+    if request.method == 'POST':
+        form = ResourceForm(request.POST, instance=resource)
+        if form.is_valid():
+            form.save()
+            messages.add_message(
+                request, messages.SUCCESS,
+                'Resource updated successfully.')
+    else:
+        form = ResourceForm(instance=resource)
+
+    context = {
+        'form': form,
+        'resource': resource,
+    }
+    return render(request, 'resources/add_resource.html', context)
+
+
+def delete_resource(request, resource_id):
+    resource = Resource.objects.get(id=resource_id)
+    resource.delete()
+    messages.add_message(
+        request, messages.SUCCESS,
+        'Resource deleted successfully.')
+    return index(request)

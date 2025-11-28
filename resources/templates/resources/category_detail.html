@@ -12,6 +12,10 @@
                     <a href="#{{ resource.id }}Modal" class="list-group-item-action resource-link" data-bs-toggle="modal">
                         <h2 class="h4">{{ resource.name }}</h2>
                     </a>
+                    {% if user.is_authenticated and user == resource.uploader %}
+                    <a href="{% url 'edit_resource' resource.id %}" class="btn btn-sm btn-primary ms-2">Edit</a>
+                    <a href="{% url 'delete_resource' resource.id %}" class="btn btn-sm btn-danger ms-2">Delete</a>
+                    {% endif %}
                 </li>
             {% endfor %}
         </ul>

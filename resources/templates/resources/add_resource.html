@@ -1,12 +1,18 @@
 {% extends "base.html" %}
 {% load crispy_forms_tags %}
+{% url 'edit_resource' as edit_resource_url %}
 
 {% block content %}
 <div class="container">
     <div class="row text-center">
         {% if user.is_authenticated %}
-<h1 class="my-4">Add New Resource</h1>
-<p class="lead">Contribute a new resource to the Developer Toolkit.</p>
+<h1 class="my-4">
+    {% if request.resolver_match.url_name == 'edit_resource' %} Edit Resource
+    {% else %}
+    Add New Resource
+    {% endif %}
+</h1>
+<p class="lead">Contribute towards helping developers.</p>
 </div>
 <div class="row">
 <div class="col-md-8 offset-md-2">
