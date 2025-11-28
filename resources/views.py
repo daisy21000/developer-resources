@@ -1,8 +1,9 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+from django.http import HttpResponseRedirect
 from .models import Resource, Category
 from .forms import ResourceForm, CategoryForm
 from django.contrib import messages
+
 
 
 # Create your views here.
@@ -84,4 +85,4 @@ def delete_resource(request, resource_id):
         messages.add_message(
             request, messages.ERROR,
             'You are not authorized to delete this resource.')
-    return index(request)
+    return HttpResponseRedirect('/')
