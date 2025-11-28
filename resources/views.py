@@ -27,7 +27,7 @@ def category_detail(request, category_id):
 def submit_resource(request):
     if request.method == 'POST':
         form = ResourceForm(request.POST)
-        if form.is_valid():
+        if request.user.is_authenticated and form.is_valid():
             resource = form.save(commit=False)
             resource.uploader = request.user
             resource.approved = False
@@ -37,6 +37,10 @@ def submit_resource(request):
                 request, messages.SUCCESS,
                 'Resource submitted and awaiting approval.')
             form = ResourceForm()  # Reset the form after successful submission
+        else:
+            messages.add_message(
+                request, messages.ERROR,
+                'There was an error submitting the resource. Please try again.')
     else:
         form = ResourceForm()
 
@@ -50,11 +54,15 @@ def edit_resource(request, resource_id):
     resource = Resource.objects.get(id=resource_id)
     if request.method == 'POST':
         form = ResourceForm(request.POST, instance=resource)
-        if form.is_valid():
+        if resource.uploader == request.user and form.is_valid():
             form.save()
             messages.add_message(
                 request, messages.SUCCESS,
                 'Resource updated successfully.')
+        else:
+            messages.add_message(
+                request, messages.ERROR,
+                'You are not authorized to edit this resource.')
     else:
         form = ResourceForm(instance=resource)
 
@@ -67,8 +75,13 @@ def edit_resource(request, resource_id):
 
 def delete_resource(request, resource_id):
     resource = Resource.objects.get(id=resource_id)
-    resource.delete()
-    messages.add_message(
-        request, messages.SUCCESS,
-        'Resource deleted successfully.')
+    if resource.uploader == request.user:
+        resource.delete()
+        messages.add_message(
+            request, messages.SUCCESS,
+            'Resource deleted successfully.')
+    else:
+        messages.add_message(
+            request, messages.ERROR,
+            'You are not authorized to delete this resource.')
     return index(request)
