@@ -8,12 +8,12 @@
         <div class="col">
         <ul class="list-group my-4">
             {% for resource in resources %}
-                <li class="list-group-item">
+                <li class="list-group-item text-center text-sm-start d-sm-flex justify-content-between align-items-center">
                     <a href="#{{ resource.id }}Modal" class="list-group-item-action resource-link" data-bs-toggle="modal">
                         <h2 class="h4">{{ resource.name }}</h2>
                     </a>
                     {% if user.is_authenticated and user == resource.uploader %}
-                    <a href="{% url 'edit_resource' resource.id %}" class="btn btn-sm btn-primary ms-2">Edit</a>
+                    <a href="{% url 'edit_resource' resource.id %}" class="btn btn-sm secondary-button small-button ms-2">Edit</a>
                     <a href="#{{ resource.id }}DeleteModal" class="btn btn-sm btn-danger ms-2" data-bs-toggle="modal">Delete</a>
                     {% endif %}
                 </li>
