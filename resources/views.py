@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from .models import Resource, Category
 from .forms import ResourceForm, CategoryForm
+from django.contrib import messages
 
 
 # Create your views here.
@@ -32,7 +33,10 @@ def submit_resource(request):
             resource.approved = False
             resource.save()
             form.save_m2m()  # Save tags
-            return HttpResponse("Resource submitted successfully and is pending approval.")
+            messages.add_message(
+                request, messages.SUCCESS,
+                'Resource submitted and awaiting approval.')
+            form = ResourceForm()  # Reset the form after successful submission
     else:
         form = ResourceForm()
 
