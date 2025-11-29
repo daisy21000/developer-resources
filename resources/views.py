@@ -5,7 +5,6 @@ from .forms import ResourceForm, CategoryForm
 from django.contrib import messages
 
 
-
 # Create your views here.
 def index(request):
     categories = Category.objects.filter(published=True).order_by('name')
@@ -26,46 +25,58 @@ def category_detail(request, category_id):
 
 
 def submit_resource(request):
-    if request.method == 'POST':
-        form = ResourceForm(request.POST)
-        if request.user.is_authenticated and form.is_valid():
-            resource = form.save(commit=False)
-            resource.uploader = request.user
-            resource.approved = False
-            resource.save()
-            form.save_m2m()  # Save tags
-            messages.add_message(
-                request, messages.SUCCESS,
-                'Resource submitted and awaiting approval.')
-            form = ResourceForm()  # Reset the form after successful submission
-        else:
-            messages.add_message(
-                request, messages.ERROR,
-                'There was an error submitting the resource. Please try again.')
+    if not request.user.is_authenticated:
+        messages.add_message(
+            request, messages.ERROR,
+            'You must be logged in to submit a resource.')
+        return HttpResponseRedirect('/accounts/login/')
     else:
-        form = ResourceForm()
+        if request.method == 'POST':
+            form = ResourceForm(request.POST)
+            if form.is_valid():
+                resource = form.save(commit=False)
+                resource.uploader = request.user
+                resource.approved = False
+                resource.save()
+                form.save_m2m()  # Save tags
+                messages.add_message(
+                    request, messages.SUCCESS,
+                    'Resource submitted and awaiting approval.')
+                form = ResourceForm()  # Reset the form after successful submission
+            else:
+                messages.add_message(
+                    request, messages.ERROR,
+                    'There was an error submitting the resource. Please try again.')
+        else:
+            form = ResourceForm()
 
-    context = {
-        'form': form,
-    }
-    return render(request, 'resources/add_resource.html', context)
+        context = {
+            'form': form,
+        }
+        return render(request, 'resources/add_resource.html', context)
 
 
 def edit_resource(request, resource_id):
     resource = Resource.objects.get(id=resource_id)
-    if request.method == 'POST':
-        form = ResourceForm(request.POST, instance=resource)
-        if resource.uploader == request.user and form.is_valid():
-            form.save()
-            messages.add_message(
-                request, messages.SUCCESS,
-                'Resource updated successfully.')
-        else:
-            messages.add_message(
-                request, messages.ERROR,
-                'You are not authorized to edit this resource.')
+    if resource.uploader != request.user:
+        messages.add_message(
+            request, messages.ERROR,
+            'You are not authorized to edit this resource.')
+        return HttpResponseRedirect('/')
     else:
-        form = ResourceForm(instance=resource)
+        if request.method == 'POST':
+            form = ResourceForm(request.POST, instance=resource)
+            if form.is_valid():
+                form.save()
+                messages.add_message(
+                    request, messages.SUCCESS,
+                    'Resource updated successfully.')
+            else:
+                messages.add_message(
+                    request, messages.ERROR,
+                    'Something went wrong. Please try again.')
+        else:
+            form = ResourceForm(instance=resource)
 
     context = {
         'form': form,
