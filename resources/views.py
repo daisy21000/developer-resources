@@ -97,3 +97,17 @@ def delete_resource(request, resource_id):
             request, messages.ERROR,
             'You are not authorized to delete this resource.')
     return HttpResponseRedirect('/')
+
+
+def view_favorites(request):
+    if not request.user.is_authenticated:
+        messages.add_message(
+            request, messages.ERROR,
+            'You must be logged in to view your favorite resources.')
+        return HttpResponseRedirect('/accounts/login/')
+    else:
+        favorite_resources = request.user.favorite_resources.filter(approved=True).order_by('-created_at')
+        context = {
+            'favorite_resources': favorite_resources,
+        }
+        return render(request, 'resources/favorite_resources.html', context)
