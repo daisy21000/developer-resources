@@ -21,7 +21,6 @@ body {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-    background-color: rebeccapurple; /* Temporary background color for testing */
 }
 
 h1, h2, h3, h4, h5, h6 {
