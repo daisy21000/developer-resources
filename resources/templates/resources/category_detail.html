@@ -22,8 +22,8 @@
                     {% endif %}
                     </a>
                     {% if user.is_authenticated and user == resource.uploader %}
-                    <a href="{% url 'edit_resource' resource.id %}" class="btn secondary-button small-button ms-2">Edit</a>
-                    <a href="#{{ resource.id }}DeleteModal" class="btn delete-button small-button ms-2" data-bs-toggle="modal">Delete</a>
+                    <a href="{% url 'edit_resource' resource.id %}" class="btn secondary-button small-button ms-2" role="button">Edit</a>
+                    <a href="#{{ resource.id }}DeleteModal" class="btn delete-button small-button ms-2" data-bs-toggle="modal" role="button">Delete</a>
                     {% endif %}
                     {% endif %}
                 </li>

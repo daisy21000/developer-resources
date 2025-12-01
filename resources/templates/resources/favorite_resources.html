@@ -15,10 +15,10 @@
                     <a href="#{{ resource.id }}Modal" class="list-group-item-action resource-link" data-bs-toggle="modal">
                         <h2 class="h4">{{ resource.name }}</h2>
                     </a>
-                    <a href="{% url 'favorite_resource' resource.id %}" class="ms-2 favorite-link" aria-label="Remove {{ resource.name }} from favorites"><i class="bi bi-bookmark-star-fill"></i></a>
+                    <a href="{% url 'favorite_resource' resource.id %}" class="ms-2 favorite-link" aria-label="Remove {{ resource.name }} from favorites" title="Remove {{ resource.name }} from favorites"><i class="bi bi-bookmark-star-fill"></i></a>
                     {% if user == resource.uploader %}
-                    <a href="{% url 'edit_resource' resource.id %}" class="btn secondary-button small-button ms-2">Edit</a>
-                    <a href="#{{ resource.id }}DeleteModal" class="btn delete-button small-button ms-2" data-bs-toggle="modal">Delete</a>
+                    <a href="{% url 'edit_resource' resource.id %}" class="btn secondary-button small-button ms-2" role="button">Edit</a>
+                    <a href="#{{ resource.id }}DeleteModal" class="btn delete-button small-button ms-2" data-bs-toggle="modal" role="button">Delete</a>
                     {% endif %}
                 </li>
             {% endfor %}
