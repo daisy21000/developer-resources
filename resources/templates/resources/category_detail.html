@@ -52,6 +52,11 @@
         <p><strong>Keywords: </strong>{{ resource.keywords.all|join:", " }}</p>
       </div>
       <div class="modal-footer">
+        {% if resource in favorite_resources %}
+        <a href="{% url 'favorite_resource' resource.id %}" class="btn delete-button">Remove from Favorites</a>
+        {% else %}
+        <a href="{% url 'favorite_resource' resource.id %}" class="btn secondary-button">Add to Favorites</a>
+        {% endif %}
         <a href="{{ resource.url }}" type="button" class="btn primary-button">Visit Site</a>
       </div>
     </div>
