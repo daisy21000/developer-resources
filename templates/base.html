@@ -3,6 +3,7 @@
 {% url 'account_signup' as signup_url %}
 {% url 'account_logout' as logout_url %}
 {% url 'add_resource' as add_resource_url %}
+{% url 'view_favorites' as view_favorites_url %}
 {% load static %}
 
 <!DOCTYPE html>
@@ -44,7 +45,7 @@
                         <a class="nav-link" href="{{ logout_url }}">Logout</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link disabled" aria-disabled="true">Favourites</a>
+                        <a class="nav-link" href="{{ view_favorites_url }}">Favourites</a>
                     </li>
                     {% else %}
                     <li class="nav-item">

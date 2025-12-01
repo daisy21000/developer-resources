@@ -106,7 +106,7 @@ def view_favorites(request):
             'You must be logged in to view your favorite resources.')
         return HttpResponseRedirect('/accounts/login/')
     else:
-        favorite_resources = request.user.favorite_resources.filter(approved=True).order_by('-created_at')
+        favorite_resources = request.user.favorite_resources.all().order_by('-created_at')
         context = {
             'favorite_resources': favorite_resources,
         }
