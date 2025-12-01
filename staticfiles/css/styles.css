@@ -6,7 +6,7 @@
     --background-color: #E0E0E0;
     --text-color: #333333;
     --highlight-color-one: #FF6F61;
-    --highlight-color-two: #FFD800;
+    --highlight-color-two: #E86100;
     --body-font: 'Montserrat', sans-serif;
     --heading-font: 'Roboto Mono', monospace;
 }
@@ -117,6 +117,16 @@ ul {
 
 .resource-link {
     color: var(--text-color);
+}
+
+.favorite-link {
+    color: var(--highlight-color-two);
+    font-size: 1.4rem;
+    transition: color 0.2s;
+}
+
+.favorite-link:hover {
+    color: var(--primary-color);
 }
 
 /* Signup Page Styles */
