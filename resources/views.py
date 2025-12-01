@@ -3,6 +3,7 @@ from django.http import HttpResponseRedirect
 from .models import Resource, Category
 from .forms import ResourceForm, CategoryForm
 from django.contrib import messages
+from django.shortcuts import render
 
 
 # Create your views here.
@@ -111,3 +112,23 @@ def view_favorites(request):
             'favorite_resources': favorite_resources,
         }
         return render(request, 'resources/favorite_resources.html', context)
+
+
+def favorite_resource(request, resource_id):
+    resource = Resource.objects.get(id=resource_id)
+    if request.user.is_authenticated:
+        if resource.favorites.filter(id=request.user.id).exists():
+            resource.favorites.remove(request.user)
+            messages.add_message(
+                request, messages.SUCCESS,
+                'Resource removed from favorites.')
+        else:
+            resource.favorites.add(request.user)
+            messages.add_message(
+                request, messages.SUCCESS,
+                'Resource added to favorites.')
+    else:
+        messages.add_message(
+            request, messages.ERROR,
+            'You must be logged in to favorite a resource.')
+    return HttpResponseRedirect(request.META.get('HTTP_REFERER', '/'))
