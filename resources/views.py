@@ -18,9 +18,11 @@ def index(request):
 def category_detail(request, category_id):
     category = Category.objects.get(id=category_id, published=True)
     resources = category.resources.filter(approved=True).order_by('-created_at')
+    favorite_resources = resources.filter(favorites=request.user) if request.user.is_authenticated else []
     context = {
         'category': category,
         'resources': resources,
+        'favorite_resources': favorite_resources,
     }
     return render(request, 'resources/category_detail.html', context)
 
