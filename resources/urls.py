@@ -10,4 +10,5 @@ urlpatterns = [
     path('favorites/', views.view_favorites, name='view_favorites'),
     path('favorite/<int:resource_id>/', views.favorite_resource, name='favorite_resource'),
     path('suggest-category/', views.suggest_category, name='suggest_category'),
+    path('search/', views.search_resources, name='search_resources'),
 ]
