@@ -135,6 +135,7 @@ def favorite_resource(request, resource_id):
             'You must be logged in to favorite a resource.')
     return HttpResponseRedirect(request.META.get('HTTP_REFERER', '/'))
 
+
 def suggest_category(request):
     if not request.user.is_authenticated:
         messages.add_message(
@@ -147,7 +148,10 @@ def suggest_category(request):
             if form.is_valid():
                 category = form.save(commit=False)
                 category.author = request.user
-                category.published = False
+                if request.user.is_superuser:
+                    category.published = True
+                else:
+                    category.published = False
                 category.save()
                 messages.add_message(
                     request, messages.SUCCESS,
