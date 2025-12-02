@@ -7,6 +7,11 @@ class ResourceForm(forms.ModelForm):
         model = Resource
         fields = ['name', 'description', 'url', 'category', 'keywords']
 
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        if 'category' in self.fields:
+            self.fields['category'].queryset = Category.objects.filter(published=True)
+
 
 class CategoryForm(forms.ModelForm):
     class Meta:
