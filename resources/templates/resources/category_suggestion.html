@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+{% url 'edit_resource' as edit_resource_url %}
+
+{% block content %}
+<div class="container">
+    <div class="row text-center">
+    {% if user.is_authenticated %}
+<h1 class="my-4">
+    Suggest a New Category
+</h1>
+<p class="lead">Contribute towards helping developers.</p>
+</div>
+<div class="row">
+<div class="col-md-8 offset-md-2">
+<form method="post">
+    {% csrf_token %}
+    {{ form|crispy }}
+    <button type="submit" class="btn primary-button mb-4">Submit</button>
+</form>
+</div>
+</div>
+        {% else %}
+        <h1 class="my-4">Authentication Required</h1>
+        <p>Please <a href="{% url 'account_login' %}">log in</a> to suggest a category.</p>
+        {% endif %}
+</div>
+{% endblock content %}

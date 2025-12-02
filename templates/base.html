@@ -47,6 +47,9 @@
                     <li class="nav-item">
                         <a class="nav-link" href="{{ view_favorites_url }}">Favourites</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'suggest_category' %}">Suggest Category</a>
+                    </li>
                     {% else %}
                     <li class="nav-item">
                         <a class="nav-link" href="{{ login_url }}">Login</a>
@@ -55,9 +58,6 @@
                         <a class="nav-link" href="{{ signup_url }}">Register</a>
                     </li>
                     {% endif %}
-                    <li class="nav-item">
-                        <a class="nav-link disabled" aria-disabled="true">Contact</a>
-                    </li>
                 </ul>
             </div>
         </div>

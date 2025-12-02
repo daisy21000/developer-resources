@@ -134,3 +134,33 @@ def favorite_resource(request, resource_id):
             request, messages.ERROR,
             'You must be logged in to favorite a resource.')
     return HttpResponseRedirect(request.META.get('HTTP_REFERER', '/'))
+
+def suggest_category(request):
+    if not request.user.is_authenticated:
+        messages.add_message(
+            request, messages.ERROR,
+            'You must be logged in to suggest a category.')
+        return HttpResponseRedirect('/accounts/login/')
+    else:
+        if request.method == 'POST':
+            form = CategoryForm(request.POST)
+            if form.is_valid():
+                category = form.save(commit=False)
+                category.author = request.user
+                category.published = False
+                category.save()
+                messages.add_message(
+                    request, messages.SUCCESS,
+                    'Category suggestion submitted and awaiting approval.')
+                form = CategoryForm()  # Reset the form after successful submission
+            else:
+                messages.add_message(
+                    request, messages.ERROR,
+                    'There was an error submitting the category. Please try again.')
+        else:
+            form = CategoryForm()
+
+        context = {
+            'form': form,
+        }
+        return render(request, 'resources/category_suggestion.html', context)
