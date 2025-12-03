@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponseRedirect
-from django.db.models import Q
+from django.db.models import Q, Count
 from .models import Resource, Category
 from .forms import ResourceForm, CategoryForm
 from django.contrib import messages
@@ -174,6 +174,7 @@ def suggest_category(request):
 def search_resources(request):
     query = request.GET.get('q', '')
     search_in = request.GET.getlist('in') or ['name']
+    sort_by = request.GET.get('sort_by', 'alphabetical')
     resources = Resource.objects.filter(approved=True).order_by('-created_at') if query else []
     if query:
         q_objects = Q()
@@ -184,6 +185,16 @@ def search_resources(request):
         if 'keywords' in search_in:
             q_objects |= Q(keywords__name__icontains=query)
         resources = resources.filter(q_objects).distinct()
+
+        if sort_by == 'alphabetical':
+            resources = resources.order_by('name')
+        elif sort_by == 'newest':
+            resources = resources.order_by('-created_at')
+        elif sort_by == 'oldest':
+            resources = resources.order_by('created_at')
+        elif sort_by == 'most_favorited':
+            resources = resources.annotate(num_favorites=Count('favorites', distinct=True)).order_by('-num_favorites')
+
     context = {
         'resources': resources,
         'query': query,

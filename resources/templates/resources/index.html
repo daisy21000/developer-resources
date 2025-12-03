@@ -27,7 +27,7 @@
                 <div class="accordion-item">
                     <h2 class="accordion-header">
                     <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                        Search Filters
+                        Search Filters &amp; Sort By
                     </button>
                     </h2>
                     <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#searchFiltersAccordion">
@@ -47,6 +47,13 @@
                                     <label class="form-check-label" for="keywords_checkbox">Keywords</label>
                                 </div>
                             </div>
+                            <h3 class="h5">Sort by:</h3>
+                            <select class="form-select" aria-label="Sort resources" name="sort_by">
+                                <option value="alphabetical" selected>Alphabetical</option>
+                                <option value="newest">Newest</option>
+                                <option value="oldest">Oldest</option>
+                                <option value="most_favorited">Most Favorited</option>
+                            </select>
                         </div>
                     </div>
                 </div>
