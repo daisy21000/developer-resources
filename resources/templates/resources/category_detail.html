@@ -3,6 +3,7 @@
 <div class="container">
     <div class="row text-center">
         <h1 class="mt-4">{{ category.name }}</h1>
+        {% if resources|length != 0 %}
         <p class="lead">{{ resources|length }} Resources under the "{{ category.name }}" category.</p>
         <form method="get">
             <div class="accordion" id="resourceSortAccordion">
@@ -26,10 +27,14 @@
                 </div>
             </div>
         </form>
+        {% endif %}
     </div>
     <div class="row">
         <div class="col">
         <ul class="list-group my-4">
+            {% if resources|length == 0 %}
+                <p class="lead text-center">There are no resources under this category yet.</p>
+            {% endif %}
             {% for resource in resources %}
                 <li class="list-group-item text-center text-sm-start d-sm-flex justify-content-between align-items-center">
                     <a href="#{{ resource.id }}Modal" class="list-group-item-action resource-link" data-bs-toggle="modal">
