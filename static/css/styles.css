@@ -32,6 +32,14 @@ ul {
     padding: 0;
 }
 
+a {
+    color: var(--text-color);
+}
+
+a:hover {
+    text-decoration: none;
+}
+
 /* Button Styles */
 
 .primary-button {
