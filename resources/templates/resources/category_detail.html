@@ -4,7 +4,7 @@
     <div class="row text-center">
         <h1 class="mt-4">{{ category.name }}</h1>
         {% if resources|length != 0 %}
-        <p class="lead">{{ resources|length }} Resources under the "{{ category.name }}" category.</p>
+        <p class="lead">{{ resources|length }} Resource{{ resources|length|pluralize }} under the "{{ category.name }}" category.</p>
         <form method="get">
             <div class="accordion" id="resourceSortAccordion">
                 <div class="accordion-item">

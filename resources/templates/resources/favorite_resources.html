@@ -4,7 +4,7 @@
     <div class="row text-center">
         <h1 class="mt-4">Favorite Resources</h1>
         {% if favorite_resources|length != 0 %}
-        <p class="lead">There are {{ favorite_resources|length }} resources you have marked as favorites.</p>
+        <p class="lead">There are {{ favorite_resources|length }} resource{{ favorite_resources|length|pluralize }} you have marked as favorites.</p>
         <form method="get">
             <div class="accordion" id="resourceSortAccordion">
                 <div class="accordion-item">
