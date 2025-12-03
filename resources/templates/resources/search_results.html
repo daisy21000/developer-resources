@@ -107,6 +107,8 @@
         <p><strong>Category: </strong>{{ resource.category.name }}</p>
         <p><strong>Uploaded by: </strong>{{ resource.uploader.username }}</p>
         <p><strong>Keywords: </strong>{{ resource.keywords.all|join:", " }}</p>
+        <p><strong>Favorites: </strong>{{ resource.favorites.count }}</p>
+        <p><strong>Last Updated: </strong>{{ resource.updated_at|date:"F j, Y, g:i a"|default:"N/A"}}</p>
       </div>
       <div class="modal-footer justify-content-start justify-content-sm-end">
         {% if user.is_authenticated %}
