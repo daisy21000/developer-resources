@@ -4,6 +4,28 @@
     <div class="row text-center">
         <h1 class="mt-4">Favorite Resources</h1>
         <p class="lead">There are {{ favorite_resources|length }} resources you have marked as favorites.</p>
+        <form method="get">
+            <div class="accordion" id="resourceSortAccordion">
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                        Sort By
+                    </button>
+                    </h2>
+                    <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#resourceSortAccordion">
+                        <div class="accordion-body text-start">
+                            <select class="form-select" aria-label="Sort resources" name="sort_by">
+                                <option value="alphabetical" selected>Alphabetical</option>
+                                <option value="newest">Newest</option>
+                                <option value="oldest">Oldest</option>
+                                <option value="most_favorited">Most Favorited</option>
+                            </select>
+                            <button type="submit" class="btn primary-button mt-2">Sort</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
     </div>
     <div class="row">
         <div class="col">

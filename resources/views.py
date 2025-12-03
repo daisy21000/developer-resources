@@ -122,6 +122,17 @@ def view_favorites(request):
         return HttpResponseRedirect('/accounts/login/')
     else:
         favorite_resources = request.user.favorite_resources.all().order_by('-created_at')
+        if favorite_resources.exists():
+            sort_by = request.GET.get('sort_by', 'alphabetical')
+            if sort_by == 'alphabetical':
+                favorite_resources = favorite_resources.order_by('name')
+            elif sort_by == 'newest':
+                favorite_resources = favorite_resources.order_by('-created_at')
+            elif sort_by == 'oldest':
+                favorite_resources = favorite_resources.order_by('created_at')
+            elif sort_by == 'most_favorited':
+                favorite_resources = favorite_resources.annotate(num_favorites=Count('favorites', distinct=True)).order_by('-num_favorites')
+
         context = {
             'favorite_resources': favorite_resources,
         }
