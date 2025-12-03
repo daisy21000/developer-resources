@@ -20,6 +20,17 @@ def category_detail(request, category_id):
     category = Category.objects.get(id=category_id, published=True)
     resources = category.resources.filter(approved=True).order_by('-created_at')
     favorite_resources = resources.filter(favorites=request.user) if request.user.is_authenticated else []
+    if resources.exists():
+        sort_by = request.GET.get('sort_by', 'alphabetical')
+        if sort_by == 'alphabetical':
+            resources = resources.order_by('name')
+        elif sort_by == 'newest':
+            resources = resources.order_by('-created_at')
+        elif sort_by == 'oldest':
+            resources = resources.order_by('created_at')
+        elif sort_by == 'most_favorited':
+            resources = resources.annotate(num_favorites=Count('favorites', distinct=True)).order_by('-num_favorites')
+
     context = {
         'category': category,
         'resources': resources,
