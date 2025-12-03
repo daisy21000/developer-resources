@@ -13,3 +13,18 @@ if (loginForm) {
         field.classList.add('form-control', 'my-2');
     });
 }
+
+const sortBySelect = document.querySelector('#sort_by');
+if (sortBySelect) {
+    const selectOptions = sortBySelect.querySelectorAll('option');
+    let queryString = window.location.search;
+    let urlParams = new URLSearchParams(queryString);
+    let currentSort = urlParams.get('sort_by') || 'alphabetical';
+    selectOptions.forEach(option => {
+        if (option.value === currentSort) {
+            option.selected = true;
+        } else {
+            option.selected = false;
+        }
+    });
+}
