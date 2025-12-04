@@ -169,6 +169,13 @@ def suggest_category(request):
             form = CategoryForm(request.POST)
             if form.is_valid():
                 category = form.save(commit=False)
+                # Check if category with the same name already exists
+                existing_category = Category.objects.filter(name__iexact=category.name).first()
+                if existing_category:
+                    messages.add_message(
+                        request, messages.ERROR,
+                        'A category with this name already exists.')
+                    return HttpResponseRedirect(request.META.get('HTTP_REFERER', '/'))
                 category.author = request.user
                 if request.user.is_superuser:
                     category.published = True
