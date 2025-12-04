@@ -5,6 +5,7 @@ from .models import Resource, Category
 from .forms import ResourceForm, CategoryForm
 from django.contrib import messages
 from django.shortcuts import render
+from .utils import sort_resources
 
 
 # Create your views here.
@@ -21,15 +22,7 @@ def category_detail(request, category_id):
     resources = category.resources.filter(approved=True).order_by('-created_at')
     favorite_resources = resources.filter(favorites=request.user) if request.user.is_authenticated else []
     if resources.exists():
-        sort_by = request.GET.get('sort_by', 'alphabetical')
-        if sort_by == 'alphabetical':
-            resources = resources.order_by('name')
-        elif sort_by == 'newest':
-            resources = resources.order_by('-created_at')
-        elif sort_by == 'oldest':
-            resources = resources.order_by('created_at')
-        elif sort_by == 'most_favorited':
-            resources = resources.annotate(num_favorites=Count('favorites', distinct=True)).order_by('-num_favorites')
+        resources = sort_resources(request, resources)
 
     context = {
         'category': category,
@@ -123,15 +116,7 @@ def view_favorites(request):
     else:
         favorite_resources = request.user.favorite_resources.all().order_by('-created_at')
         if favorite_resources.exists():
-            sort_by = request.GET.get('sort_by', 'alphabetical')
-            if sort_by == 'alphabetical':
-                favorite_resources = favorite_resources.order_by('name')
-            elif sort_by == 'newest':
-                favorite_resources = favorite_resources.order_by('-created_at')
-            elif sort_by == 'oldest':
-                favorite_resources = favorite_resources.order_by('created_at')
-            elif sort_by == 'most_favorited':
-                favorite_resources = favorite_resources.annotate(num_favorites=Count('favorites', distinct=True)).order_by('-num_favorites')
+            favorite_resources = sort_resources(request, favorite_resources)
 
         context = {
             'favorite_resources': favorite_resources,
@@ -196,7 +181,6 @@ def suggest_category(request):
 def search_resources(request):
     query = request.GET.get('q', '')
     search_in = request.GET.getlist('in') or ['name']
-    sort_by = request.GET.get('sort_by', 'alphabetical')
     resources = Resource.objects.filter(approved=True).order_by('-created_at') if query else []
     if query:
         q_objects = Q()
@@ -207,15 +191,7 @@ def search_resources(request):
         if 'keywords' in search_in:
             q_objects |= Q(keywords__name__icontains=query)
         resources = resources.filter(q_objects).distinct()
-
-        if sort_by == 'alphabetical':
-            resources = resources.order_by('name')
-        elif sort_by == 'newest':
-            resources = resources.order_by('-created_at')
-        elif sort_by == 'oldest':
-            resources = resources.order_by('created_at')
-        elif sort_by == 'most_favorited':
-            resources = resources.annotate(num_favorites=Count('favorites', distinct=True)).order_by('-num_favorites')
+        resources = sort_resources(request, resources)
 
     context = {
         'resources': resources,
