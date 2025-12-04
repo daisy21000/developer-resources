@@ -18,6 +18,21 @@ const resourceForm = document.getElementById('resource_form');
 if (resourceForm) {
     const urlLabel = resourceForm.querySelector('label[for="id_url"]');
     urlLabel.style.textTransform = 'uppercase';
+    resourceForm.addEventListener('submit', e => {
+        e.preventDefault();
+        const nameField = resourceForm.querySelector('input[name="name"]');
+        if (nameField.value.trim() === '') {
+            alert('Resource name cannot be empty.');
+            nameField.value = '';
+            nameField.focus();
+            return;
+        } else if (nameField.value.length > 200) {
+            alert('Resource name cannot exceed 200 characters.');
+            nameField.focus();
+            return;
+        }
+        resourceForm.submit();
+    });
 }
 
 const sortBySelect = document.querySelector('#sort_by');
