@@ -14,6 +14,11 @@ if (loginForm) {
     });
 }
 
+const errorlist = document.querySelectorAll('.errorlist');
+errorlist.forEach(list => {
+    list.classList.add('alert', 'alert-danger', 'mb-2');
+});
+
 const resourceForm = document.getElementById('resource_form');
 if (resourceForm) {
     const urlLabel = resourceForm.querySelector('label[for="id_url"]');
