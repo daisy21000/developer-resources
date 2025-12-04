@@ -43,6 +43,20 @@ def submit_resource(request):
             form = ResourceForm(request.POST)
             if form.is_valid():
                 resource = form.save(commit=False)
+                # Check if resource with the same URL already exists
+                existing_resource_url = Resource.objects.filter(url=resource.url).first()
+                if existing_resource_url:
+                    messages.add_message(
+                        request, messages.ERROR,
+                        'A resource with this URL already exists.')
+                    return HttpResponseRedirect(request.META.get('HTTP_REFERER', '/'))
+                # Check if resource with the same name already exists
+                existing_resource_name = Resource.objects.filter(name=resource.name).first()
+                if existing_resource_name:
+                    messages.add_message(
+                        request, messages.ERROR,
+                        'A resource with this name already exists.')
+                    return HttpResponseRedirect(request.META.get('HTTP_REFERER', '/'))
                 resource.uploader = request.user
                 resource.approved = False
                 resource.save()
