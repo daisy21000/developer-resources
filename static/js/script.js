@@ -14,6 +14,12 @@ if (loginForm) {
     });
 }
 
+const resourceForm = document.getElementById('resource_form');
+if (resourceForm) {
+    const urlLabel = resourceForm.querySelector('label[for="id_url"]');
+    urlLabel.style.textTransform = 'uppercase';
+}
+
 const sortBySelect = document.querySelector('#sort_by');
 if (sortBySelect) {
     const selectOptions = sortBySelect.querySelectorAll('option');

@@ -16,7 +16,7 @@
 </div>
 <div class="row">
 <div class="col-md-8 offset-md-2">
-<form method="post">
+<form method="post" id="resource_form">
     {% csrf_token %}
     {{ form|crispy }}
     <button type="submit" class="btn primary-button mb-4">Submit</button>
