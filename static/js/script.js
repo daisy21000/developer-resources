@@ -35,6 +35,25 @@ if (resourceForm) {
     });
 }
 
+const categoryForm = document.getElementById('category_form');
+if (categoryForm) {
+    categoryForm.addEventListener('submit', e => {
+        e.preventDefault();
+        const nameField = categoryForm.querySelector('input[name="name"]');
+        if (nameField.value.trim() === '') {
+            alert('Category name cannot be empty.');
+            nameField.value = '';
+            nameField.focus();
+            return;
+        } else if (nameField.value.length > 100) {
+            alert('Category name cannot exceed 100 characters.');
+            nameField.focus();
+            return;
+        }
+        categoryForm.submit();
+    });
+}
+
 const sortBySelect = document.querySelector('#sort_by');
 if (sortBySelect) {
     const selectOptions = sortBySelect.querySelectorAll('option');
