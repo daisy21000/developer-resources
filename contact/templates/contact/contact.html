@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+<div class="container">
+    <div class="row text-center">
+<h1 class="my-4">
+    Contact Us
+</h1>
+<p class="lead">We are here to help. Please fill out the form below to get in touch with us.</p>
+</div>
+<div class="row">
+<div class="col-md-8 offset-md-2">
+<form method="post" id="category_form">
+    {% csrf_token %}
+    {% comment %} {{ form|crispy }} {% endcomment %}
+    <button type="submit" class="btn primary-button mb-4">Submit</button>
+</form>
+</div>
+</div>
+</div>
+{% endblock content %}
