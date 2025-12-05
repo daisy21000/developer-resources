@@ -51,6 +51,7 @@ INSTALLED_APPS = [
     'crispy_bootstrap5',
     'taggit',
     'resources',
+    'about',
 ]
 
 SITE_ID = 1
