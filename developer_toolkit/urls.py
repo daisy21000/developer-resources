@@ -17,9 +17,11 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from resources import urls as resource_urls
+from contact import urls as contact_urls
 
 urlpatterns = [
     path('accounts/', include('allauth.urls')),
     path('admin/', admin.site.urls),
+    path('contact/', include(contact_urls), name='contact_urls'),
     path('', include(resource_urls), name='resources_urls'),
 ]
