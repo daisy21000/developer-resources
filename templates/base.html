@@ -4,6 +4,8 @@
 {% url 'account_logout' as logout_url %}
 {% url 'add_resource' as add_resource_url %}
 {% url 'view_favorites' as view_favorites_url %}
+{% url 'suggest_category' as suggest_category_url %}
+{% url 'contact' as contact_url %}
 {% load static %}
 
 <!DOCTYPE html>
@@ -41,27 +43,27 @@
                 <ul class="navbar-nav ms-auto">
                     {% if user.is_authenticated %}
                     <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="{{ add_resource_url }}">Add Resource</a>
+                        <a class="nav-link {% if request.path == add_resource_url %}active{% endif %}" aria-current="page" href="{{ add_resource_url }}">Add Resource</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ view_favorites_url }}">Favourites</a>
+                        <a class="nav-link {% if request.path == view_favorites_url %}active{% endif %}" href="{{ view_favorites_url }}">Favourites</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'suggest_category' %}">Suggest Category</a>
+                        <a class="nav-link {% if request.path == suggest_category_url %}active{% endif %}" href="{{ suggest_category_url }}">Suggest Category</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ logout_url }}">Logout</a>
+                        <a class="nav-link {% if request.path == logout_url %}active{% endif %}" href="{{ logout_url }}">Logout</a>
                     </li>
                     {% else %}
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ login_url }}">Login</a>
+                        <a class="nav-link {% if request.path == login_url %}active{% endif %}" href="{{ login_url }}">Login</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ signup_url }}">Register</a>
+                        <a class="nav-link {% if request.path == signup_url %}active{% endif %}" href="{{ signup_url }}">Register</a>
                     </li>
                     {% endif %}
                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'contact' %}">Contact</a>
+                        <a class="nav-link {% if request.path == contact_url %}active{% endif %}" href="{{ contact_url }}">Contact</a>
                     </li>
                 </ul>
             </div>

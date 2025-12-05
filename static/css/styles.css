@@ -100,6 +100,10 @@ a:hover {
     text-decoration: underline;
 }
 
+.nav-link.active {
+    font-weight: 500;
+}
+
 /* Index Page Styles */
 
 .category-card {
