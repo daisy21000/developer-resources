@@ -73,3 +73,28 @@ if (sortBySelect) {
         }
     });
 }
+
+const contactForm = document.querySelector('#contact_form');
+if (contactForm) {
+    contactForm.addEventListener('submit', e => {
+        e.preventDefault();
+        const nameField = contactForm.querySelector('input[name="name"]');
+        if (nameField.value.trim() === '') {
+            alert('Name cannot be empty.');
+            nameField.value = '';
+            nameField.focus();
+            return;
+        } else if (nameField.value.length > 200) {  
+            alert('Name cannot exceed 200 characters.');
+            nameField.focus();
+            return;
+        }
+        const messageField = contactForm.querySelector('textarea[name="message"]');
+        if (messageField.value.trim() === '') {
+            alert('Message cannot be empty.');
+            messageField.value = '';
+            messageField.focus();
+            return;
+        }
+    });
+}
