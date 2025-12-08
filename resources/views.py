@@ -19,7 +19,8 @@ def index(request):
 
     **Context:**
 
-    ``categories``: A queryset of published :model:`Category` objects ordered by name.
+    ``categories``: A queryset of published :model:`Category` objects ordered
+    by name.
 
     **Template:**
 
@@ -140,7 +141,7 @@ def edit_resource(request, resource_id):
     """
     Handle the editing of an existing resource.
 
-    This view allows the uploader of a resource to edit its details. 
+    This view allows the uploader of a resource to edit its details.
     If the request method is POST,
     it validates the form data and saves the changes if valid.
     It also provides user feedback through messages.
@@ -150,7 +151,7 @@ def edit_resource(request, resource_id):
 
     **Context:**
 
-    ``form``: An instance of `ResourceForm`, either populated with the 
+    ``form``: An instance of `ResourceForm`, either populated with the
     resource data or with POST data.
     ``resource``: The :model:`Resource` object being edited.
 
@@ -221,7 +222,7 @@ def view_favorites(request):
     """
     Display the user's favorite resources.
 
-    This view fetches all resources favorited by the current user 
+    This view fetches all resources favorited by the current user
     and displays them.
     If the user is not authenticated, they are redirected to the login page.
 
