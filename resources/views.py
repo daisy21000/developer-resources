@@ -12,8 +12,8 @@ def index(request):
     """
     Display the homepage with a list of published categories.
 
-    This view fetches all published categories, orders them by name, and renders them
-    on the homepage.
+    This view fetches all published categories, orders them by name,
+    and renders them on the homepage.
 
     :param request: The HTTP request object.
 
@@ -36,9 +36,10 @@ def category_detail(request, category_id):
     """
     Display details of a specific category along with its approved resources.
 
-    This view fetches a published category by its ID and retrieves all approved resources
-    associated with that category. It also identifies which of these resources are favorited
-    by the current user. The resources can be sorted based on user preferences.
+    This view fetches a published category by its ID and retrieves
+    all approved resources associated with that category. It also identifies
+    which of these resources are favorited by the current user.
+    The resources can be sorted based on user preferences.
 
     :param request: The HTTP request object.
     :param category_id: The ID of the category to be displayed.
@@ -46,8 +47,10 @@ def category_detail(request, category_id):
     **Context:**
 
     ``category``: The :model:`Category` object being viewed.
-    ``resources``: A queryset of approved :model:`Resource` objects in the category, sorted as per user preference.
-    ``favorite_resources``: A queryset of :model:`Resource` objects favorited by the current user.
+    ``resources``: A queryset of approved :model:`Resource` objects in the
+    category, sorted as per user preference.
+    ``favorite_resources``: A queryset of :model:`Resource` objects favorited
+    by the current user.
 
     **Template:**
 
@@ -71,15 +74,17 @@ def submit_resource(request):
     """
     Handle the submission of a new resource.
 
-    This view processes the resource submission form. If the request method is POST,
-    it validates the form data, checks for duplicates, and saves the resource if valid.
+    This view processes the resource submission form.
+    If the request method is POST, it validates the form data,
+    checks for duplicates, and saves the resource if valid.
     It also provides user feedback through messages.
 
     :param request: The HTTP request object.
 
     **Context:**
 
-    ``form``: An instance of `ResourceForm`, either empty or populated with POST data.
+    ``form``: An instance of `ResourceForm`, either empty or populated
+    with POST data.
 
     **Template:**
 
@@ -116,7 +121,8 @@ def submit_resource(request):
                 messages.add_message(
                     request, messages.SUCCESS,
                     'Resource submitted and awaiting approval.')
-                form = ResourceForm()  # Reset the form after successful submission
+                # Reset the form after successful submission
+                form = ResourceForm()
             else:
                 messages.add_message(
                     request, messages.ERROR,
@@ -134,8 +140,9 @@ def edit_resource(request, resource_id):
     """
     Handle the editing of an existing resource.
 
-    This view allows the uploader of a resource to edit its details. If the request method
-    is POST, it validates the form data and saves the changes if valid.
+    This view allows the uploader of a resource to edit its details. 
+    If the request method is POST,
+    it validates the form data and saves the changes if valid.
     It also provides user feedback through messages.
 
     :param request: The HTTP request object.
@@ -143,7 +150,8 @@ def edit_resource(request, resource_id):
 
     **Context:**
 
-    ``form``: An instance of `ResourceForm`, either populated with the resource data or with POST data.
+    ``form``: An instance of `ResourceForm`, either populated with the 
+    resource data or with POST data.
     ``resource``: The :model:`Resource` object being edited.
 
     **Template:**
@@ -213,14 +221,16 @@ def view_favorites(request):
     """
     Display the user's favorite resources.
 
-    This view fetches all resources favorited by the current user and displays them.
+    This view fetches all resources favorited by the current user 
+    and displays them.
     If the user is not authenticated, they are redirected to the login page.
 
     :param request: The HTTP request object.
 
     **Context:**
 
-    ``favorite_resources``: A queryset of :model:`Resource` objects favorited by the current user.
+    ``favorite_resources``: A queryset of :model:`Resource` objects favorited
+    by the current user.
 
     **Template:**
 
@@ -246,7 +256,8 @@ def favorite_resource(request, resource_id):
     """
     Toggle the favorite status of a resource for the current user.
 
-    This view adds or removes a resource from the user's favorites based on its current status.
+    This view adds or removes a resource from the user's favorites
+    based on its current status.
     If the user is not authenticated, an error message is displayed.
 
     :param request: The HTTP request object.
@@ -283,15 +294,18 @@ def suggest_category(request):
     """
     Handle the suggestion of a new category.
 
-    This view processes the category suggestion form. If the request method is POST,
-    it validates the form data, checks for duplicates, and saves the category if valid.
+    This view processes the category suggestion form.
+    If the request method is POST,
+    it validates the form data, checks for duplicates,
+    and saves the category if valid.
     It also provides user feedback through messages.
 
     :param request: The HTTP request object.
 
     **Context:**
 
-    ``form``: An instance of `CategoryForm`, either empty or populated with POST data.
+    ``form``: An instance of `CategoryForm`, either empty or populated
+    with POST data.
 
     **Template:**
 
@@ -315,6 +329,7 @@ def suggest_category(request):
                         'A category with this name already exists.')
                     return HttpResponseRedirect(request.META.get('HTTP_REFERER', '/'))
                 category.author = request.user
+                # Automatically publish if the user is a superuser
                 if request.user.is_superuser:
                     category.published = True
                 else:
@@ -323,7 +338,8 @@ def suggest_category(request):
                 messages.add_message(
                     request, messages.SUCCESS,
                     'Category suggestion submitted and awaiting approval.')
-                form = CategoryForm()  # Reset the form after successful submission
+                # Reset the form after successful submission
+                form = CategoryForm()
             else:
                 messages.add_message(
                     request, messages.ERROR,
@@ -342,16 +358,18 @@ def search_resources(request):
     Handle the search for resources based on user queries.
 
     This view processes search queries submitted by users. It allows searching
-    within resource names, descriptions, and keywords. The results can be sorted
-    based on user preferences.
+    within resource names, descriptions, and keywords.
+    The results can be sorted based on user preferences.
 
     :param request: The HTTP request object.
 
     **Context:**
 
-    ``resources``: A queryset of :model:`Resource` objects matching the search criteria, sorted as per user preference.
+    ``resources``: A queryset of :model:`Resource` objects matching
+    the search criteria, sorted as per user preference.
     ``query``: The search query string.
-    ``search_in``: A list of fields to search within (name, description, keywords).
+    ``search_in``: A list of fields to search within
+    (name, description, keywords).
 
     **Template:**
 
@@ -361,13 +379,16 @@ def search_resources(request):
     search_in = request.GET.getlist('in') or ['name']
     resources = Resource.objects.filter(approved=True).order_by('-created_at') if query else []
     if query:
+        # Build the Q object based on selected search fields
         q_objects = Q()
+        # Search in name, description, and keywords as per user selection
         if 'name' in search_in:
             q_objects |= Q(name__icontains=query)
         if 'description' in search_in:
             q_objects |= Q(description__icontains=query)
         if 'keywords' in search_in:
             q_objects |= Q(keywords__name__icontains=query)
+        # Filter resources based on the constructed Q object
         resources = resources.filter(q_objects).distinct()
         resources = sort_resources(request, resources)
 
