@@ -12,5 +12,6 @@ class ContactForm(forms.ModelForm):
     - message: The message content of the request.
     """
     class Meta:
+        # Specify the model and fields to include in the form
         model = Request
         fields = ['name', 'email', 'message']
