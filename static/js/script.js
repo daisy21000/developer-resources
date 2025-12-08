@@ -1,3 +1,4 @@
+// Apply Bootstrap classes to signup form input fields
 const signupForm = document.getElementById('signup_form');
 if (signupForm) {
     const inputFields = signupForm.querySelectorAll('input[type="text"], input[type="email"], input[type="password"]');
@@ -6,6 +7,7 @@ if (signupForm) {
     });
 }
 
+// Apply Bootstrap classes to login form input fields
 const loginForm = document.getElementById('login_form');
 if (loginForm) {
     const inputFields = loginForm.querySelectorAll('input[type="text"], input[type="password"]');
@@ -14,11 +16,13 @@ if (loginForm) {
     });
 }
 
+// Style error messages with Bootstrap alert classes in signup and login forms
 const errorlist = document.querySelectorAll('.errorlist');
 errorlist.forEach(list => {
     list.classList.add('alert', 'alert-danger', 'mb-2');
 });
 
+// Resource form validation and URL label styling
 const resourceForm = document.getElementById('resource_form');
 if (resourceForm) {
     const urlLabel = resourceForm.querySelector('label[for="id_url"]');
@@ -40,6 +44,7 @@ if (resourceForm) {
     });
 }
 
+// Category form validation
 const categoryForm = document.getElementById('category_form');
 if (categoryForm) {
     categoryForm.addEventListener('submit', e => {
@@ -59,6 +64,7 @@ if (categoryForm) {
     });
 }
 
+// Set the selected option in the sort_by dropdown based on URL parameter
 const sortBySelect = document.querySelector('#sort_by');
 if (sortBySelect) {
     const selectOptions = sortBySelect.querySelectorAll('option');
@@ -74,6 +80,7 @@ if (sortBySelect) {
     });
 }
 
+// Contact form validation
 const contactForm = document.querySelector('#contact_form');
 if (contactForm) {
     contactForm.addEventListener('submit', e => {
