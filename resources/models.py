@@ -26,12 +26,14 @@ class Resource(models.Model):
     category = models.ForeignKey('Category', on_delete=models.CASCADE, related_name='resources')
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
+    # Tags associated with the resource using django-taggit
     keywords = TaggableManager()
     uploader = models.ForeignKey(User, on_delete=models.CASCADE, related_name='resources')
     approved = models.BooleanField(default=False)
     favorites = models.ManyToManyField(User, related_name='favorite_resources', blank=True)
 
     def __str__(self):
+        # Return the name of the resource
         return self.name
 
 
@@ -49,7 +51,9 @@ class Category(models.Model):
     published = models.BooleanField(default=False)
 
     class Meta:
+        # Set plural name for the Category model
         verbose_name_plural = "Categories"
 
     def __str__(self):
+        # Return the name of the category
         return self.name

@@ -20,7 +20,9 @@ class Request(models.Model):
     read = models.BooleanField(default=False)
 
     def __str__(self):
+        # Return a string representation of the contact request
         return f"Request from {self.name} <{self.email}>"
 
     class Meta:
+        # Set default ordering to show newest requests first
         ordering = ['-created_at']
