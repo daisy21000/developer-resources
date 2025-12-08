@@ -21,11 +21,13 @@
         </div>
     </div>
     <div class="row">
+        <!-- Search Form Start -->
         <form action="{% url 'search_resources' %}" method="get">
             <div class="input-group mb-4">
                 <input type="text" class="form-control" name="q" placeholder="Search resources..." aria-label="Search resources" aria-describedby="button-search">
                 <button class="btn secondary-button small-button" type="submit" id="button-search">Search</button>
             </div>
+            <!-- Search Filters & Sort By Accordion Start -->
             <div class="accordion" id="searchFiltersAccordion">
                 <div class="accordion-item">
                     <h2 class="accordion-header">
@@ -61,7 +63,9 @@
                     </div>
                 </div>
             </div>
+            <!-- Search Filters & Sort By Accordion End -->
         </form>
+        <!-- Search Form End -->
     </div>
     <div class="row">
         <div class="col-12 text-center my-4">
@@ -69,6 +73,7 @@
         </div>
         {% for category in categories %}
             <div class="col-sm-6 col-md-4 col-lg-3 mb-3 text-center">
+                <!-- Category Card Start -->
                 <div class="card category-card">
                     <div class="card-body">
                         <a href="{% url 'category_detail' category.id %}" class="category-link">
@@ -76,6 +81,7 @@
                         </a>
                     </div>
                 </div>
+                <!-- Category Card End -->
             </div>
         {% endfor %}
     </div>

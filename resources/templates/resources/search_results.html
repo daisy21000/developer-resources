@@ -26,11 +26,13 @@
                     {{ resources|length }} resource{{ resources|length|pluralize }} found.
                 {% endif %}
             </p>
+            <!-- Search Form Start -->
             <form action="{% url 'search_resources' %}" method="get">
                 <div class="input-group mb-4">
                     <input type="text" class="form-control" name="q" placeholder="Search resources..." aria-label="Search resources" aria-describedby="button-search">
                     <button class="btn secondary-button small-button" type="submit" id="button-search">Search</button>
                 </div>
+                <!-- Search Filters & Sort By Accordion Start -->
                 <div class="accordion" id="searchFiltersAccordion">
                     <div class="accordion-item">
                         <h2 class="accordion-header">
@@ -66,7 +68,10 @@
                         </div>
                     </div>
                 </div>
+                <!-- Search Filters & Sort By Accordion End -->
             </form>
+            <!-- Search Form End -->
+            <!-- Search Results Start -->
             <ul class="list-group my-4">
                 {% for resource in resources %}
                     <li class="list-group-item text-center text-sm-start d-sm-flex justify-content-between align-items-center">
@@ -87,6 +92,7 @@
                     </li>
                 {% endfor %}
             </ul>
+            <!-- Search Results End -->
         </div>
     </div>
 </div>
@@ -125,8 +131,8 @@
             </div>
         </div>
     </div>
-{% endfor %}
 <!-- Modal End -->
+{% endfor %}
 
 {% for resource in resources %}
 <!-- Delete Confirmation Modal Start -->
@@ -147,6 +153,6 @@
             </div>
         </div>
     </div>
-{% endfor %}
 <!-- Delete Confirmation Modal End -->
+{% endfor %}
 {% endblock %}
