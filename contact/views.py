@@ -16,7 +16,8 @@ def contact(request):
 
     **Context:**
 
-    ``form``: An instance of `ContactForm`, either empty or populated with POST data.
+    ``form``: An instance of `ContactForm`, either empty or populated with
+    POST data.
 
     **Template:**
 
@@ -27,7 +28,8 @@ def contact(request):
         if form.is_valid():
             form.save()
             messages.success(request, 'Thank you for contacting us. We will get back to you shortly.')
-            form = ContactForm()  # Clear the form after successful submission
+            # Clear the form after successful submission
+            form = ContactForm()
         else:
             messages.error(request, 'There was an error with your submission. Please try again.')
     else:
