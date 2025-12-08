@@ -34,76 +34,76 @@
     </div>
     <div class="row">
         <div class="col">
-        <ul class="list-group my-4">
-            {% if favorite_resources|length == 0 %}
-                <p class="lead text-center">You have no favorite resources yet.</p>
-            {% endif %}
-            {% for resource in favorite_resources %}
-                <li class="list-group-item text-center text-sm-start d-sm-flex justify-content-between align-items-center">
-                    <a href="#{{ resource.id }}Modal" class="list-group-item-action resource-link" data-bs-toggle="modal">
-                        <h2 class="h4">{{ resource.name }}</h2>
-                    </a>
-                    <a href="{% url 'favorite_resource' resource.id %}" class="ms-2 favorite-link" aria-label="Remove {{ resource.name }} from favorites" title="Remove {{ resource.name }} from favorites"><i class="bi bi-bookmark-star-fill"></i></a>
-                    {% if user == resource.uploader %}
-                    <a href="{% url 'edit_resource' resource.id %}" class="btn secondary-button small-button ms-2" role="button">Edit</a>
-                    <a href="#{{ resource.id }}DeleteModal" class="btn delete-button small-button ms-2" data-bs-toggle="modal" role="button">Delete</a>
-                    {% endif %}
-                </li>
-            {% endfor %}
-        </ul>
+            <ul class="list-group my-4">
+                {% if favorite_resources|length == 0 %}
+                    <p class="lead text-center">You have no favorite resources yet.</p>
+                {% endif %}
+                {% for resource in favorite_resources %}
+                    <li class="list-group-item text-center text-sm-start d-sm-flex justify-content-between align-items-center">
+                        <a href="#{{ resource.id }}Modal" class="list-group-item-action resource-link" data-bs-toggle="modal">
+                            <h2 class="h4">{{ resource.name }}</h2>
+                        </a>
+                        <a href="{% url 'favorite_resource' resource.id %}" class="ms-2 favorite-link" aria-label="Remove {{ resource.name }} from favorites" title="Remove {{ resource.name }} from favorites"><i class="bi bi-bookmark-star-fill"></i></a>
+                        {% if user == resource.uploader %}
+                        <a href="{% url 'edit_resource' resource.id %}" class="btn secondary-button small-button ms-2" role="button">Edit</a>
+                        <a href="#{{ resource.id }}DeleteModal" class="btn delete-button small-button ms-2" data-bs-toggle="modal" role="button">Delete</a>
+                        {% endif %}
+                    </li>
+                {% endfor %}
+            </ul>
         </div>
     </div>
 </div>
 {% for resource in favorite_resources %}
 <!-- Modal Start -->
-<div class="modal fade" id="{{ resource.id }}Modal" tabindex="-1" aria-labelledby="{{ resource.id }}ModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h3 class="modal-title fs-5" id="{{ resource.id }}ModalLabel">{{ resource.name }}</h3>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        <p><strong>Description: </strong>{{ resource.description }}</p>
-        <p>
-            <strong>URL: </strong>
-            <a href="{{ resource.url }}">{{ resource.url }}</a>
-        </p>
-        <p><strong>Category: </strong>{{ resource.category.name }}</p>
-        <p><strong>Uploaded by: </strong>{{ resource.uploader.username }}</p>
-        <p><strong>Keywords: </strong>{{ resource.keywords.all|join:", " }}</p>
-        <p><strong>Favorites: </strong>{{ resource.favorites.count }}</p>
-        <p><strong>Last Updated: </strong>{{ resource.updated_at|date:"F j, Y, g:i a"|default:"N/A"}}</p>
-      </div>
-      <div class="modal-footer justify-content-start justify-content-sm-end">
-        <a href="{% url 'favorite_resource' resource.id %}" class="btn delete-button">Remove from Favorites</a>
-        <a href="{{ resource.url }}" type="button" class="btn primary-button">Visit Site</a>
-      </div>
+    <div class="modal fade" id="{{ resource.id }}Modal" tabindex="-1" aria-labelledby="{{ resource.id }}ModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="modal-title fs-5" id="{{ resource.id }}ModalLabel">{{ resource.name }}</h3>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p><strong>Description: </strong>{{ resource.description }}</p>
+                    <p>
+                        <strong>URL: </strong>
+                        <a href="{{ resource.url }}">{{ resource.url }}</a>
+                    </p>
+                    <p><strong>Category: </strong>{{ resource.category.name }}</p>
+                    <p><strong>Uploaded by: </strong>{{ resource.uploader.username }}</p>
+                    <p><strong>Keywords: </strong>{{ resource.keywords.all|join:", " }}</p>
+                    <p><strong>Favorites: </strong>{{ resource.favorites.count }}</p>
+                    <p><strong>Last Updated: </strong>{{ resource.updated_at|date:"F j, Y, g:i a"|default:"N/A"}}</p>
+                </div>
+                <div class="modal-footer justify-content-start justify-content-sm-end">
+                    <a href="{% url 'favorite_resource' resource.id %}" class="btn delete-button">Remove from Favorites</a>
+                    <a href="{{ resource.url }}" type="button" class="btn primary-button">Visit Site</a>
+                </div>
+            </div>
+        </div>
     </div>
-  </div>
-</div>
 {% endfor %}
 <!-- Modal End -->
 
 {% for resource in favorite_resources %}
 <!-- Delete Confirmation Modal Start -->
-<div class="modal fade" id="{{ resource.id }}DeleteModal" tabindex="-1" aria-labelledby="{{ resource.id }}DeleteModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h3 class="modal-title fs-5" id="{{ resource.id }}DeleteModalLabel">Delete {{ resource.name }}</h3>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        <p>Are you sure you want to delete this resource?</p>
-      </div>
-      <div class="modal-footer justify-content-start justify-content-sm-end">
-        <a href="{% url 'delete_resource' resource.id %}" type="button" class="btn delete-button">Delete</a>
-        <button type="button" class="btn secondary-button" data-bs-dismiss="modal">Cancel</button>
-      </div>
+    <div class="modal fade" id="{{ resource.id }}DeleteModal" tabindex="-1" aria-labelledby="{{ resource.id }}DeleteModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="modal-title fs-5" id="{{ resource.id }}DeleteModalLabel">Delete {{ resource.name }}</h3>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Are you sure you want to delete this resource?</p>
+                </div>
+                <div class="modal-footer justify-content-start justify-content-sm-end">
+                    <a href="{% url 'delete_resource' resource.id %}" type="button" class="btn delete-button">Delete</a>
+                    <button type="button" class="btn secondary-button" data-bs-dismiss="modal">Cancel</button>
+                </div>
+            </div>
+        </div>
     </div>
-  </div>
-</div>
 {% endfor %}
 <!-- Delete Confirmation Modal End -->
 {% endblock %}

@@ -10,114 +10,114 @@
 
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="keywords" content="developer resources, programming tools, coding resources, developer toolkit, programming categories, favorite resources">
-    <meta name="description" content="A comprehensive toolkit for developers featuring resources, categories, and user favorites.">
-    <title>{% block title %}{% endblock %}Developer Toolkit</title>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="keywords" content="developer resources, programming tools, coding resources, developer toolkit, programming categories, favorite resources">
+        <meta name="description" content="A comprehensive toolkit for developers featuring resources, categories, and user favorites.">
+        <title>{% block title %}{% endblock %}Developer Toolkit</title>
 
-    <!-- Favicon -->
-    <link rel="apple-touch-icon" sizes="180x180" href="{% static 'favicon/apple-touch-icon.png' %}">
-    <link rel="icon" type="image/png" sizes="32x32" href="{% static 'favicon/favicon-32x32.png' %}">
-    <link rel="icon" type="image/png" sizes="16x16" href="{% static 'favicon/favicon-16x16.png' %}">
-    <link rel="manifest" href="{% static 'favicon/site.webmanifest' %}">
+        <!-- Favicon -->
+        <link rel="apple-touch-icon" sizes="180x180" href="{% static 'favicon/apple-touch-icon.png' %}">
+        <link rel="icon" type="image/png" sizes="32x32" href="{% static 'favicon/favicon-32x32.png' %}">
+        <link rel="icon" type="image/png" sizes="16x16" href="{% static 'favicon/favicon-16x16.png' %}">
+        <link rel="manifest" href="{% static 'favicon/site.webmanifest' %}">
 
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+        <!-- Google Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
 
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+        <!-- Bootstrap CSS -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
 
-    <!-- Bootstrap Icons -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+        <!-- Bootstrap Icons -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
 
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
-</head>
-<body>
-    <!-- Navbar Start -->
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="{{ home_url }}">Developer Toolkit</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    {% if user.is_authenticated %}
-                    <li class="nav-item">
-                        <a class="nav-link {% if request.path == add_resource_url %}active{% endif %}" aria-current="page" href="{{ add_resource_url }}">Add Resource</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link {% if request.path == view_favorites_url %}active{% endif %}" href="{{ view_favorites_url }}">Favourites</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link {% if request.path == suggest_category_url %}active{% endif %}" href="{{ suggest_category_url }}">Suggest Category</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link {% if request.path == logout_url %}active{% endif %}" href="{{ logout_url }}">Logout</a>
-                    </li>
-                    {% else %}
-                    <li class="nav-item">
-                        <a class="nav-link {% if request.path == login_url %}active{% endif %}" href="{{ login_url }}">Login</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link {% if request.path == signup_url %}active{% endif %}" href="{{ signup_url }}">Register</a>
-                    </li>
-                    {% endif %}
-                    <li class="nav-item">
-                        <a class="nav-link {% if request.path == contact_url %}active{% endif %}" href="{{ contact_url }}">Contact</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-    <!-- Navbar End -->
-    <!-- Django messages -->
-    <div class="container">
-        <div class="row">
-            <div class="col-md-8 offset-md-2">
-            {% for message in messages %}
-            <div class="alert {{ message.tags }} alert-dismissible
-                fade show mt-4" id="msg" role="alert">
-                {{ message | safe }}
-                <button type="button" class="btn-close"
-                data-bs-dismiss="alert" aria-label="Close"></button>
-            </div>
-            {% endfor %}
-            </div>
-        </div>
-    </div>
-    <!-- Main Content Start -->
-    <main>
-        {% block content %}
-        {% endblock %}
-    </main>
-    <!-- Main Content End -->
-    <!-- Footer Start -->
-    <footer class="mb-0 mt-auto bg-light">
-        <div class="container py-4">
-            <div class="row align-items-center">
-                <div class="col-sm-6 text-sm-start text-center mb-2 mb-sm-0">
-                    <p class="mb-0">&copy; 2025 Developer Toolkit. All rights reserved.</p>
+        <!-- Custom CSS -->
+        <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    </head>
+    <body>
+        <!-- Navbar Start -->
+        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="{{ home_url }}">Developer Toolkit</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        {% if user.is_authenticated %}
+                            <li class="nav-item">
+                                <a class="nav-link {% if request.path == add_resource_url %}active{% endif %}" aria-current="page" href="{{ add_resource_url }}">Add Resource</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link {% if request.path == view_favorites_url %}active{% endif %}" href="{{ view_favorites_url }}">Favourites</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link {% if request.path == suggest_category_url %}active{% endif %}" href="{{ suggest_category_url }}">Suggest Category</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link {% if request.path == logout_url %}active{% endif %}" href="{{ logout_url }}">Logout</a>
+                            </li>
+                        {% else %}
+                            <li class="nav-item">
+                                <a class="nav-link {% if request.path == login_url %}active{% endif %}" href="{{ login_url }}">Login</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link {% if request.path == signup_url %}active{% endif %}" href="{{ signup_url }}">Register</a>
+                            </li>
+                        {% endif %}
+                        <li class="nav-item">
+                            <a class="nav-link {% if request.path == contact_url %}active{% endif %}" href="{{ contact_url }}">Contact</a>
+                        </li>
+                    </ul>
                 </div>
-                <div class="col-sm-6 text-sm-end text-center">
-                    <a href="https://github.com/daisy21000/developer-resources" target="_blank" rel="noopener noreferrer" aria-label="GitHub Repository Link (opens in a new tab)">
-                        <i class="bi bi-github footer-icon"></i>
-                    </a>
+            </div>
+        </nav>
+        <!-- Navbar End -->
+        <!-- Django messages -->
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 offset-md-2">
+                {% for message in messages %}
+                    <div class="alert {{ message.tags }} alert-dismissible
+                        fade show mt-4" id="msg" role="alert">
+                        {{ message | safe }}
+                        <button type="button" class="btn-close"
+                        data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                {% endfor %}
                 </div>
             </div>
         </div>
-    </footer>
-    <!-- Footer End -->
+        <!-- Main Content Start -->
+        <main>
+            {% block content %}
+            {% endblock %}
+        </main>
+        <!-- Main Content End -->
+        <!-- Footer Start -->
+        <footer class="mb-0 mt-auto bg-light">
+            <div class="container py-4">
+                <div class="row align-items-center">
+                    <div class="col-sm-6 text-sm-start text-center mb-2 mb-sm-0">
+                        <p class="mb-0">&copy; 2025 Developer Toolkit. All rights reserved.</p>
+                    </div>
+                    <div class="col-sm-6 text-sm-end text-center">
+                        <a href="https://github.com/daisy21000/developer-resources" target="_blank" rel="noopener noreferrer" aria-label="GitHub Repository Link (opens in a new tab)">
+                            <i class="bi bi-github footer-icon"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- Footer End -->
 
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+        <!-- Bootstrap JS -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
 
-    <!-- Custom JS -->
-    <script src="{% static 'js/script.js' %}"></script>
-</body>
+        <!-- Custom JS -->
+        <script src="{% static 'js/script.js' %}"></script>
+    </body>
 </html>
