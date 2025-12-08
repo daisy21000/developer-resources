@@ -1,10 +1,9 @@
 from django.shortcuts import render
 from django.http import HttpResponseRedirect
 from django.db.models import Q
+from django.contrib import messages
 from .models import Resource, Category
 from .forms import ResourceForm, CategoryForm
-from django.contrib import messages
-from django.shortcuts import render
 from .utils import sort_resources
 
 
