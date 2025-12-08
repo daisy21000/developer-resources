@@ -9,16 +9,16 @@ class Resource(models.Model):
     Model for a developer resource related to :model:`Category` by :model:`auth.User`.
 
     Fields:
-    - name: The name of the resource.
-    - description: A brief description of the resource.
-    - url: The URL of the resource.
-    - category: The category to which the resource belongs.
-    - created_at: The timestamp when the resource was created.
-    - updated_at: The timestamp when the resource was last updated.
-    - keywords: Tags associated with the resource.
-    - uploader: The user who uploaded the resource.
-    - approved: A boolean indicating whether the resource has been approved.
-    - favorites: Many-to-many relationship with users who have favorited the resource.
+    - name (CharField): The name of the resource.
+    - description (TextField): A brief description of the resource.
+    - url (URLField): The URL of the resource.
+    - category (ForeignKey): The category to which the resource belongs.
+    - created_at (DateTimeField): The timestamp when the resource was created.
+    - updated_at (DateTimeField): The timestamp when the resource was last updated.
+    - keywords (TaggableManager): Tags associated with the resource.
+    - uploader (ForeignKey): The user who uploaded the resource.
+    - approved (BooleanField): A boolean indicating whether the resource has been approved.
+    - favorites (ManyToManyField): Many-to-many relationship with users who have favorited the resource.
     """
     name = models.CharField(max_length=200)
     description = models.TextField()
@@ -40,9 +40,9 @@ class Category(models.Model):
     Model for a resource category related to :model:`auth.User`.
 
     Fields:
-    - name: The name of the category.
-    - author: The user who created the category.
-    - published: A boolean indicating whether the category is published.
+    - name (CharField): The name of the category.
+    - author (ForeignKey): The user who created the category.
+    - published (BooleanField): A boolean indicating whether the category is published.
     """
     name = models.CharField(max_length=100)
     author = models.ForeignKey(User, on_delete=models.CASCADE, related_name='categories')
