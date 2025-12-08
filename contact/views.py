@@ -6,6 +6,23 @@ from .forms import ContactForm
 
 # Create your views here.
 def contact(request):
+    """
+    Handle contact form submissions.
+
+    This view processes the contact form. If the request method is POST,
+    it validates the form data and saves it if valid.
+    It also provides user feedback through messages.
+
+    :param request: The HTTP request object.
+
+    **Context:**
+
+    ``form``: An instance of `ContactForm`, either empty or populated with POST data.
+
+    **Template:**
+
+    :template:`contact/contact.html`
+    """
     if request.method == 'POST':
         form = ContactForm(request.POST)
         if form.is_valid():
