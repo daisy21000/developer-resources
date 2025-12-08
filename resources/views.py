@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponseRedirect
-from django.db.models import Q, Count
+from django.db.models import Q
 from .models import Resource, Category
 from .forms import ResourceForm, CategoryForm
 from django.contrib import messages
