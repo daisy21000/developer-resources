@@ -27,11 +27,18 @@ def contact(request):
         form = ContactForm(request.POST)
         if form.is_valid():
             form.save()
-            messages.success(request, 'Thank you for contacting us. We will get back to you shortly.')
+            messages.success(
+                request,
+                'Thank you for contacting us. We will get back to you shortly.'
+            )
             # Clear the form after successful submission
             form = ContactForm()
         else:
-            messages.error(request, 'There was an error with your submission. Please try again.')
+            messages.error(
+                request,
+                'There was an error with your submission. '
+                'Please try again.'
+            )
     else:
         form = ContactForm()
     context = {'form': form}
