@@ -19,8 +19,13 @@ body {
     color: var(--text-color);
     /* Styles for the footer to stay at the bottom of the page */
     min-height: 100vh;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -47,6 +52,8 @@ a:hover {
     border: 3px solid var(--primary-color);
     padding: 7px 15px;
     border-radius: 5px;
+    -webkit-transition: background-color 0.2s;
+    -o-transition: background-color 0.2s;
     transition: background-color 0.2s;
 }
 
@@ -60,6 +67,8 @@ a:hover {
     border: 3px solid var(--secondary-color);
     padding: 7px 15px;
     border-radius: 5px;
+    -webkit-transition: background-color 0.2s;
+    -o-transition: background-color 0.2s;
     transition: background-color 0.2s;
 }
 
@@ -73,6 +82,8 @@ a:hover {
     border: 3px solid var(--highlight-color-one);
     padding: 7px 15px;
     border-radius: 5px;
+    -webkit-transition: background-color 0.2s;
+    -o-transition: background-color 0.2s;
     transition: background-color 0.2s;
 }
 
@@ -107,13 +118,21 @@ a:hover {
 /* Index Page Styles */
 
 .category-card {
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    -webkit-box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    -webkit-transition: -webkit-transform 0.2s, -webkit-box-shadow 0.2s;
+    transition: -webkit-transform 0.2s, -webkit-box-shadow 0.2s;
+    -o-transition: transform 0.2s, box-shadow 0.2s;
     transition: transform 0.2s, box-shadow 0.2s;
+    transition: transform 0.2s, box-shadow 0.2s, -webkit-transform 0.2s, -webkit-box-shadow 0.2s;
 }
 
 .category-card:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    -webkit-transform: translateY(-2px);
+        -ms-transform: translateY(-2px);
+            transform: translateY(-2px);
+    -webkit-box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
 .category-link {
@@ -134,6 +153,8 @@ a:hover {
 .favorite-link {
     color: var(--highlight-color-two);
     font-size: 1.4rem;
+    -webkit-transition: color 0.2s;
+    -o-transition: color 0.2s;
     transition: color 0.2s;
 }
 
@@ -154,6 +175,8 @@ a:hover {
 .footer-icon {
     font-size: 1.5rem;
     color: var(--text-color);
+    -webkit-transition: color 0.2s;
+    -o-transition: color 0.2s;
     transition: color 0.2s;
 }
 
