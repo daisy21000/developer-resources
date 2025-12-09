@@ -42,6 +42,15 @@ The site owner wants to create a website for developers to access helpful resour
 
 The user stories for the project, along with acceptance criteria and tasks, can be found on the <a target="_blank" href="https://github.com/users/daisy21000/projects/8/views/1">project board</a>.
 
+### Colours
+
+I wanted a minimalistic design, hence I chose simple colours with a light grey for the background and a black for the text, the rest being button colours to make them stand out.
+
+<details>
+<summary>Colour palette</summary>
+<img width="1600" height="1200" alt="palette" src="https://github.com/user-attachments/assets/343d1a38-2bc0-48dc-bfb3-b890d3098ac2" />
+</details>
+
 ## Agile
 
 
