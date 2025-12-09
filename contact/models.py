@@ -11,7 +11,8 @@ class Request(models.Model):
     - email (EmailField): The email address of the person making the request.
     - message (TextField): The message content of the request.
     - created_at (DateTimeField): The timestamp when the request was created.
-    - read (BooleanField): A boolean indicating whether the request has been read.
+    - read (BooleanField): A boolean indicating whether the request has
+    been read.
     """
     name = models.CharField(max_length=200)
     email = models.EmailField()
