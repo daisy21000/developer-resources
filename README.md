@@ -51,6 +51,10 @@ I wanted a minimalistic design, hence I chose simple colours with a light grey f
 <img width="1600" height="1200" alt="palette" src="https://github.com/user-attachments/assets/343d1a38-2bc0-48dc-bfb3-b890d3098ac2" />
 </details>
 
+### Fonts
+
+I used "Monserrat" for the body font as it is very readable and clean, and "Roboto Mono" for the heading font to give the website a unique look.
+
 ## Agile
 
 
