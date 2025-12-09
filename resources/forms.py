@@ -22,7 +22,9 @@ class ResourceForm(forms.ModelForm):
         # Initialize the form and filter categories to only published ones
         super().__init__(*args, **kwargs)
         if 'category' in self.fields:
-            self.fields['category'].queryset = Category.objects.filter(published=True)
+            self.fields['category'].queryset = Category.objects.filter(
+                published=True
+                )
 
 
 class CategoryForm(forms.ModelForm):
