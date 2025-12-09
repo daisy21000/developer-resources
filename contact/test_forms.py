@@ -49,7 +49,10 @@ class ContactFormTest(TestCase):
         form_data = {
             'name': 'John Doe!@#$',
             'email': 'john.doe@example.com',
-            'message': 'Hello, this is a test message with special characters !@#$%^&*()'
+            'message': (
+                'Hello, this is a test message with special characters '
+                '!@#$%^&*()'
+            )
         }
         form = ContactForm(data=form_data)
         self.assertTrue(form.is_valid())
