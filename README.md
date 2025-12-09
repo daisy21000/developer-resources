@@ -111,7 +111,15 @@ The wireframes for the website were created using Balsamiq to map out the layout
 
 ## Agile
 
+This project was built following the Agile methodology throughout. Using the MoSCoW prioritisaion, the most essential features were first delivered to create the MVP. After that, the rest of the features were worked on based on their importance. The user stories were managed through a [GitHub Project Board](https://github.com/users/daisy21000/projects/8) to keep track of the user stories and the current progress. Following the Agile methodology greatly enhaced development and allowed all important work to be done in a timely manner.
 
+The user stories were labelled based on their importance:
+
+- **Must Have** for important features that are essential for the project's MVP
+- **Should Have** for important features that are not essential for the project's MVP but improve user experience
+- **Could Have** for optional features that would enhance the project but should only be done if time allows
+
+The project board contains all the user stories, as well as their acceptance criteria and tasks. You can find the project board here: [Capstone Project Board](https://github.com/users/daisy21000/projects/8)
 
 ## Features
 
