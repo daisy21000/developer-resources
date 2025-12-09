@@ -16,6 +16,8 @@ def sort_resources(request, resources):
     elif sort_by == 'oldest':
         resources = resources.order_by('created_at')
     elif sort_by == 'most_favorited':
-        # Annotate each resource with the count of favorites and order by that count
-        resources = resources.annotate(num_favorites=Count('favorites', distinct=True)).order_by('-num_favorites')
+        # Annotate each resource with the count of favorites
+        # and order by that count
+        resources = resources.annotate(num_favorites=Count(
+            'favorites', distinct=True)).order_by('-num_favorites')
     return resources
