@@ -4,11 +4,14 @@ from . import views
 urlpatterns = [
     path('', views.index, name='index'),
     path('add/', views.submit_resource, name='add_resource'),
-    path('category/<int:category_id>/', views.category_detail, name='category_detail'),
-    path('delete/<int:resource_id>/', views.delete_resource, name='delete_resource'),
+    path('category/<int:category_id>/', views.category_detail,
+         name='category_detail'),
+    path('delete/<int:resource_id>/', views.delete_resource,
+         name='delete_resource'),
     path('edit/<int:resource_id>/', views.edit_resource, name='edit_resource'),
     path('favorites/', views.view_favorites, name='view_favorites'),
-    path('favorite/<int:resource_id>/', views.favorite_resource, name='favorite_resource'),
+    path('favorite/<int:resource_id>/', views.favorite_resource,
+         name='favorite_resource'),
     path('suggest-category/', views.suggest_category, name='suggest_category'),
     path('search/', views.search_resources, name='search_resources'),
 ]
