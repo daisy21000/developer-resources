@@ -66,12 +66,12 @@
 </div>
 {% for resource in resources %}
 <!-- Modal Start -->
-    <div class="modal fade" id="{{ resource.id }}Modal" tabindex="-1" aria-labelledby="{{ resource.id }}ModalLabel" aria-hidden="true">
+    <div class="modal fade" id="{{ resource.id }}Modal" tabindex="-1" role="dialog" aria-labelledby="{{ resource.id }}ModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
                     <h3 class="modal-title fs-5" id="{{ resource.id }}ModalLabel">{{ resource.name }}</h3>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    <button class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
                     <p><strong>Description: </strong>{{ resource.description }}</p>
@@ -93,7 +93,7 @@
                         <a href="{% url 'favorite_resource' resource.id %}" class="btn secondary-button">Add to Favorites</a>
                     {% endif %}
                 {% endif %}
-                <a href="{{ resource.url }}" type="button" class="btn primary-button">Visit Site</a>
+                <a href="{{ resource.url }}" role="button" class="btn primary-button">Visit Site</a>
             </div>
         </div>
     </div>
@@ -103,19 +103,19 @@
 
 {% for resource in resources %}
 <!-- Delete Confirmation Modal Start -->
-    <div class="modal fade" id="{{ resource.id }}DeleteModal" tabindex="-1" aria-labelledby="{{ resource.id }}DeleteModalLabel" aria-hidden="true">
+    <div class="modal fade" id="{{ resource.id }}DeleteModal" tabindex="-1" role="dialog" aria-labelledby="{{ resource.id }}DeleteModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
                     <h3 class="modal-title fs-5" id="{{ resource.id }}DeleteModalLabel">Delete {{ resource.name }}</h3>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    <button class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
                     <p>Are you sure you want to delete this resource?</p>
                 </div>
                 <div class="modal-footer justify-content-start justify-content-sm-end">
-                    <a href="{% url 'delete_resource' resource.id %}" type="button" class="btn delete-button">Delete</a>
-                    <button type="button" class="btn secondary-button" data-bs-dismiss="modal">Cancel</button>
+                    <a href="{% url 'delete_resource' resource.id %}" role="button" class="btn delete-button">Delete</a>
+                    <button class="btn secondary-button" data-bs-dismiss="modal">Cancel</button>
                 </div>
             </div>
         </div>
