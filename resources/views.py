@@ -58,8 +58,12 @@ def category_detail(request, category_id):
     :template:`resources/category_detail.html`
     """
     category = Category.objects.get(id=category_id, published=True)
-    resources = category.resources.filter(approved=True).order_by('-created_at')
-    favorite_resources = resources.filter(favorites=request.user) if request.user.is_authenticated else []
+    resources = category.resources.filter(approved=True)
+    resources = resources.order_by('-created_at')
+    if request.user.is_authenticated:
+        favorite_resources = resources.filter(favorites=request.user)
+    else:
+        favorite_resources = []
     if resources.exists():
         resources = sort_resources(request, resources)
 
@@ -102,19 +106,27 @@ def submit_resource(request):
             if form.is_valid():
                 resource = form.save(commit=False)
                 # Check if resource with the same URL already exists
-                existing_resource_url = Resource.objects.filter(url=resource.url).first()
+                existing_resource_url = Resource.objects.filter(
+                    url=resource.url
+                ).first()
                 if existing_resource_url:
                     messages.add_message(
                         request, messages.ERROR,
                         'A resource with this URL already exists.')
-                    return HttpResponseRedirect(request.META.get('HTTP_REFERER', '/'))
+                    return HttpResponseRedirect(request.META.get(
+                        'HTTP_REFERER', '/'
+                        ))
                 # Check if resource with the same name already exists
-                existing_resource_name = Resource.objects.filter(name=resource.name).first()
+                existing_resource_name = Resource.objects.filter(
+                    name=resource.name
+                ).first()
                 if existing_resource_name:
                     messages.add_message(
                         request, messages.ERROR,
                         'A resource with this name already exists.')
-                    return HttpResponseRedirect(request.META.get('HTTP_REFERER', '/'))
+                    return HttpResponseRedirect(request.META.get(
+                        'HTTP_REFERER', '/'
+                        ))
                 resource.uploader = request.user
                 resource.approved = False
                 resource.save()
@@ -127,7 +139,8 @@ def submit_resource(request):
             else:
                 messages.add_message(
                     request, messages.ERROR,
-                    'There was an error submitting the resource. Please try again.')
+                    'There was an error submitting the resource. '
+                    'Please try again.')
         else:
             form = ResourceForm()
 
@@ -243,7 +256,8 @@ def view_favorites(request):
             'You must be logged in to view your favorite resources.')
         return HttpResponseRedirect('/accounts/login/')
     else:
-        favorite_resources = request.user.favorite_resources.all().order_by('-created_at')
+        favorite_resources = request.user.favorite_resources.all()
+        favorite_resources = favorite_resources.order_by('-created_at')
         if favorite_resources.exists():
             favorite_resources = sort_resources(request, favorite_resources)
 
@@ -323,12 +337,16 @@ def suggest_category(request):
             if form.is_valid():
                 category = form.save(commit=False)
                 # Check if category with the same name already exists
-                existing_category = Category.objects.filter(name__iexact=category.name).first()
+                existing_category = Category.objects.filter(
+                    name__iexact=category.name
+                    ).first()
                 if existing_category:
                     messages.add_message(
                         request, messages.ERROR,
                         'A category with this name already exists.')
-                    return HttpResponseRedirect(request.META.get('HTTP_REFERER', '/'))
+                    return HttpResponseRedirect(request.META.get(
+                        'HTTP_REFERER', '/'
+                        ))
                 category.author = request.user
                 # Automatically publish if the user is a superuser
                 if request.user.is_superuser:
@@ -344,7 +362,8 @@ def suggest_category(request):
             else:
                 messages.add_message(
                     request, messages.ERROR,
-                    'There was an error submitting the category. Please try again.')
+                    'There was an error submitting the category. '
+                    'Please try again.')
         else:
             form = CategoryForm()
 
@@ -378,7 +397,12 @@ def search_resources(request):
     """
     query = request.GET.get('q', '')
     search_in = request.GET.getlist('in') or ['name']
-    resources = Resource.objects.filter(approved=True).order_by('-created_at') if query else []
+    if query:
+        resources = Resource.objects.filter(approved=True).order_by(
+            '-created_at'
+        )
+    else:
+        resources = []
     if query:
         # Build the Q object based on selected search fields
         q_objects = Q()
