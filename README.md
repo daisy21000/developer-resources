@@ -470,6 +470,19 @@ The errors on this page are due to django-allauth
 <img width="1891" height="785" alt="Logout Page Validation" src="https://github.com/user-attachments/assets/abd9f664-1b32-4b50-84ce-de68d8e1a097" />
 </details>
 
+#### CSS
+
+I used the [Jigsaw CSS Validator](https://jigsaw.w3.org/css-validator/) to validate my CSS. Here are the results:
+
+<details>
+<summary>CSS Validation</summary>
+<img width="1881" height="686" alt="CSS Validation" src="https://github.com/user-attachments/assets/6f64a657-f852-4b40-a6ae-6f7378e72af5" />
+
+The warnings in the CSS are due to CSS variables and prefixes for browser compatibility
+
+<img width="1879" height="855" alt="CSS Validation Warnings" src="https://github.com/user-attachments/assets/e2ccb120-bac4-45e5-ba18-2de009e08e5a" />
+</details>
+
 ## AI Implementation
 
 I used AI tools such as Copilot throught the creation of the project. The support of AI helped greatly and sped up the development process. Here are  some ways I used AI to help with the project:
