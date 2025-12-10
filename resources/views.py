@@ -186,6 +186,34 @@ def edit_resource(request, resource_id):
             form = ResourceForm(request.POST, instance=resource)
             if form.is_valid():
                 resource = form.save(commit=False)
+                # Check if resource with the same URL already exists
+                # and is not the current resource
+                existing_resource_url = Resource.objects.filter(
+                    url=resource.url
+                ).first()
+                if (existing_resource_url and
+                        existing_resource_url.id != resource.id):
+                    messages.add_message(
+                        request, messages.ERROR,
+                        f'A resource with the URL "{resource.url}"'
+                        'already exists.')
+                    return HttpResponseRedirect(request.META.get(
+                        'HTTP_REFERER', '/'
+                        ))
+                # Check if resource with the same name already exists
+                # and is not the current resource
+                existing_resource_name = Resource.objects.filter(
+                    name=resource.name
+                ).first()
+                if (existing_resource_name and
+                        existing_resource_name.id != resource.id):
+                    messages.add_message(
+                        request, messages.ERROR,
+                        f'A resource with the name "{resource.name}"'
+                        ' already exists.')
+                    return HttpResponseRedirect(request.META.get(
+                        'HTTP_REFERER', '/'
+                        ))
                 resource.approved = False  # Re-approval after edit
                 resource.save()
                 form.save_m2m()  # Save tags
