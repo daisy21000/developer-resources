@@ -307,7 +307,113 @@ Users can contact through the contact page to submit any queries. After filling 
 
 ## Testing and Validation
 
+I thoroughly tested the website through manual and automated testing as well as external testing and validation.
 
+### External Testing and Validation
+
+#### Lighthouse
+
+I ran lighthouse tests for all pages of the live site. Here are the results:
+
+<details>
+<summary>Home Page (Desktop)</summary>
+<img width="1276" height="696" alt="Home Page Lighthouse Report (Desktop)" src="https://github.com/user-attachments/assets/7a61ee8d-45a5-4087-be75-f01ee9a3866f" />
+</details>
+
+<details>
+<summary>Home Page (Mobile)</summary>
+<img width="1280" height="546" alt="Home Page Lighthouse Report (Mobile)" src="https://github.com/user-attachments/assets/2dd123fa-22b0-4ad1-aa32-de7f959675f4" />
+</details>
+
+<details>
+<summary>Add Resource Page (Desktop)</summary>
+<img width="1276" height="543" alt="Add Resource Page Lighthouse Report (Desktop)" src="https://github.com/user-attachments/assets/c1ac0692-4549-4e29-a3ae-976d9b15d52b" />
+</details>
+
+<details>
+<summary>Add Resource Page (Mobile)</summary>
+<img width="1277" height="544" alt="Add Resource Page Lighthouse Report (Mobile)" src="https://github.com/user-attachments/assets/7178a950-caa5-48cd-84fe-d02bb36c6cdd" />
+</details>
+
+<details>
+<summary>Category Detail Page (Desktop)</summary>
+<img width="1276" height="535" alt="Category Detail Page Lighthouse Report (Desktop)" src="https://github.com/user-attachments/assets/a50fb950-436d-4fb2-8458-e2f17f088fe5" />
+</details>
+
+<details>
+<summary>Category Detail Page (Mobile)</summary>
+<img width="1278" height="544" alt="Category Detail Page Lighthouse Report (Mobile)" src="https://github.com/user-attachments/assets/c48c8527-7e5d-41b9-b232-3cf62433dd8d" />
+</details>
+
+<details>
+<summary>Favourites Page (Desktop)</summary>
+<img width="1275" height="696" alt="Favourites Page Lighthouse Report (Desktop)" src="https://github.com/user-attachments/assets/7c622763-c903-4a83-8154-311a7fca600d" />
+</details>
+
+<details>
+<summary>Favourites Page (Mobile)</summary>
+<img width="1278" height="699" alt="Favourites Page Lighthouse Report (Mobile)" src="https://github.com/user-attachments/assets/f4a95a79-f6d0-4ad2-8105-a78d5d052c34" />
+</details>
+
+<details>
+<summary>Search Page (Desktop)</summary>
+<img width="1277" height="533" alt="Search Page Lighthouse Report (Desktop)" src="https://github.com/user-attachments/assets/2f049609-1634-4d0b-994f-cf6e887796cb" />
+</details>
+
+<details>
+<summary>Search Page (Mobile)</summary>
+<img width="1273" height="541" alt="Search Page Lighthouse Report (Mobile)" src="https://github.com/user-attachments/assets/4429ba4b-cefa-4163-be74-c5b5049ee5f6" />
+</details>
+
+<details>
+<summary>Suggest Category Page (Desktop)</summary>
+<img width="1274" height="540" alt="Suggest Category Page Lighthouse Report (Desktop)" src="https://github.com/user-attachments/assets/26a8b2b0-700a-4886-8777-2874f871d7ea" />
+</details>
+
+<details>
+<summary>Suggest Category Page (Mobile)</summary>
+<img width="1275" height="534" alt="Suggest Category Page Lighthouse Report (Mobile)" src="https://github.com/user-attachments/assets/1d9f1645-9d73-4dc5-b924-3ce5ba4a4b6f" />
+</details>
+
+<details>
+<summary>Contact Page (Desktop)</summary>
+<img width="1277" height="540" alt="Contact Page Lighthouse Report (Desktop)" src="https://github.com/user-attachments/assets/75814a52-d2d8-4335-8c3f-79dc72f31d0a" />
+</details>
+
+<details>
+<summary>Contact Page (Mobile)</summary>
+<img width="1273" height="524" alt="Contact Page Lighthouse Report (Mobile)" src="https://github.com/user-attachments/assets/c38c0f84-ef06-42f7-81a5-e6bd9bf9c70a" />
+</details>
+
+<details>
+<summary>Register Page (Desktop)</summary>
+<img width="1275" height="534" alt="Register Page Lighthouse Report (Desktop)" src="https://github.com/user-attachments/assets/742f1dbd-9c7c-4b30-b811-dfb7afae1636" />
+</details>
+
+<details>
+<summary>Register Page (Mobile)</summary>
+<img width="1277" height="533" alt="Register Page Lighthouse Report (Mobile)" src="https://github.com/user-attachments/assets/4ede1751-c466-4f7b-b6bb-4a79c30a623d" />
+</details>
+
+<details>
+<summary>Login Page (Desktop)</summary>
+<img width="1273" height="522" alt="Login Page Lighthouse Report (Desktop)" src="https://github.com/user-attachments/assets/bf102f37-58f5-499e-8226-75d1dd601c0d" />
+</details>
+
+<details>
+<summary>Login Page (Mobile)</summary>
+<img width="1279" height="537" alt="Login Page Lighthouse Report (Mobile)" src="https://github.com/user-attachments/assets/b8db18a4-cbd8-43e5-bbca-ec82f1c29c6c" />
+</details>
+
+<details>
+<summary>Logout Page (Desktop)</summary>
+<img width="1275" height="535" alt="Logout Page Lighthouse Report (Desktop)" src="https://github.com/user-attachments/assets/c5949c2a-42f7-4b67-96bb-c030c1f92b75" />
+</details>
+
+<details>
+<summary>Logout Page (Mobile)</summary>
+<img width="1275" height="532" alt="Logout Page Lighthouse Report (Mobile)" src="https://github.com/user-attachments/assets/fbba69fb-e7b7-4f30-b407-8fbca145b18f" />
+</details>
 
 ## AI Implementation
 
