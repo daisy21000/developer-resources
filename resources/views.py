@@ -251,7 +251,7 @@ def delete_resource(request, resource_id):
 
     **Redirects to:**
 
-    The homepage after deletion.
+    The referring page or homepage if no referrer is found.
     """
     resource = Resource.objects.get(id=resource_id)
     if resource.uploader == request.user:
@@ -263,7 +263,7 @@ def delete_resource(request, resource_id):
         messages.add_message(
             request, messages.ERROR,
             'You are not authorized to delete this resource.')
-    return HttpResponseRedirect('/')
+    return HttpResponseRedirect(request.META.get('HTTP_REFERER', '/'))
 
 
 def view_favorites(request):
