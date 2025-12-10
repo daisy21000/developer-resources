@@ -61,6 +61,11 @@ def category_detail(request, category_id):
     resources = category.resources.filter(approved=True)
     resources = resources.order_by('-created_at')
     if request.user.is_authenticated:
+        unapproved_resources = category.resources.filter(approved=False,
+                                                         uploader=request.user)
+    else:
+        unapproved_resources = []
+    if request.user.is_authenticated:
         favorite_resources = resources.filter(favorites=request.user)
     else:
         favorite_resources = []
@@ -71,6 +76,7 @@ def category_detail(request, category_id):
         'category': category,
         'resources': resources,
         'favorite_resources': favorite_resources,
+        'unapproved_resources': unapproved_resources,
     }
     return render(request, 'resources/category_detail.html', context)
 

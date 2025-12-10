@@ -162,6 +162,12 @@ a:hover {
     color: var(--primary-color);
 }
 
+.pending-approval-badge {
+    background-color: var(--highlight-color-one);
+    font-size: 0.75rem;
+    margin-left: 10px;
+}
+
 /* Signup Page Styles */
 
 .signup ul:not(.errorlist) {
