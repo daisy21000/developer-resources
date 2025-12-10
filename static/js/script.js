@@ -80,6 +80,22 @@ if (sortBySelect) {
     });
 }
 
+// Set the checked state of search-in checkboxes based on URL parameters
+const searchInCheckboxes = document.querySelector('#search-in-checkboxes');
+if (searchInCheckboxes) {
+    const checkboxes = searchInCheckboxes.querySelectorAll('input[type="checkbox"]');
+    let queryString = window.location.search;
+    let urlParams = new URLSearchParams(queryString);
+    let searchInParams = urlParams.getAll('in');
+    checkboxes.forEach(checkbox => {
+        if (searchInParams.includes(checkbox.value)) {
+            checkbox.checked = true;
+        } else {
+            checkbox.checked = false;
+        }
+    });
+}
+
 // Contact form validation
 const contactForm = document.querySelector('#contact_form');
 if (contactForm) {
