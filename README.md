@@ -305,10 +305,26 @@ Users can contact through the contact page to submit any queries. After filling 
 
 ## AI Implementation
 
-I have used AI throughout the creation of this project to assist me with various different tasks.
+I used AI tools such as Copilot throught the creation of the project. The support of AI helped greatly and sped up the development process. Here are  some ways I used AI to help with the project:
 
-### User stories
+### User Stories
 
-AI helped refine user stories and write acceptance criteria and tasks. I modified them to suit the project and implemented recommendations given about the user stories to make them more effective.
+AI helped refine user stories and write acceptance criteria and tasks. I used Copilot to help me with this and then modified them to suit the project as some were not relevant. By doing so, it saved me time and helped with giving me ideas for features.
+
+### Development
+
+AI helped speed up development significantly. I used Copilot to help with repetitive tasks and commenting. It greatly helped me create view functionality, I adjusted what Copilot generated to fit the project. If it generated something I was unsure of, I asked it to explain the code and add comments. It also helped with adding docstrings and formating files according to PEP8 standards.
+
+### Debugging
+
+AI helped debug issues I had in my code such as warnings and unintended behaviour. Copilot walked me through the problems and gave solutions which I applied after making minor adjustments. It helped me understand the issues and effectively troubleshoot them.
+
+### Unit Testing
+
+AI helped generate unit tests for the project. It specified different edge cases and created tests to ensure functionality was as expected. I manually updated the tests to ensure they would run without errors, and asked Copilot to fix some bugs in the tests. In the end, all the tests were successful. AI sped up the process of creating unit tests and identifying edge cases.
+
+### Reflection
+
+AI greatly helped me create the project. I have learned the vast benefits of AI through this project, however, there are limitaions to it. There were times where it generated code unsuitable for the project or code with bugs. Therefore, it is always essential to review and understand all code produced by AI. I have made an effort to use AI only to assist me and not to do all the work. Despite the drawbacks and difficulties, AI supported the completion of the project.
 
 ## Credits
