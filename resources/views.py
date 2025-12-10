@@ -182,10 +182,13 @@ def edit_resource(request, resource_id):
         if request.method == 'POST':
             form = ResourceForm(request.POST, instance=resource)
             if form.is_valid():
-                form.save()
+                resource = form.save(commit=False)
+                resource.approved = False  # Re-approval after edit
+                resource.save()
+                form.save_m2m()  # Save tags
                 messages.add_message(
                     request, messages.SUCCESS,
-                    'Resource updated successfully.')
+                    'Resource updated successfully and awaiting re-approval.')
             else:
                 messages.add_message(
                     request, messages.ERROR,
