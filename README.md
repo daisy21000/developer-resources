@@ -212,7 +212,7 @@ Logged-in users can delete their own resources using the delete button on the re
 
 <details>
 <summary>Delete Success Message</summary>
-<img width="1892" height="868" alt="Delete Success Message" src="https://github.com/user-attachments/assets/0d6d9def-9fe9-4a5e-ae4a-1122155374de" />
+<img width="1914" height="864" alt="Delete Success Message" src="https://github.com/user-attachments/assets/667a2c46-77fd-42c5-8ea4-07704ce4c5f2" />
 </details>
 
 ### Favourite Resources
