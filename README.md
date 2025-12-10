@@ -415,6 +415,61 @@ I ran lighthouse tests for all pages of the live site. Here are the results:
 <img width="1275" height="532" alt="Logout Page Lighthouse Report (Mobile)" src="https://github.com/user-attachments/assets/fbba69fb-e7b7-4f30-b407-8fbca145b18f" />
 </details>
 
+#### HTML
+
+I used the [W3C HTML Validator](https://validator.w3.org/) to validate the HTML templates. Here are the results:
+
+<details>
+<summary>Home Page</summary>
+<img width="1899" height="793" alt="Home Page Validation" src="https://github.com/user-attachments/assets/21a5dfdb-6c2a-498c-a1d6-3324229b1ecf" />
+</details>
+
+<details>
+<summary>Category Detail Page</summary>
+<img width="1885" height="787" alt="Category Detail Page Validation" src="https://github.com/user-attachments/assets/b761cc8d-1a5b-4386-9268-33ada31c648c" />
+</details>
+
+<details>
+<summary>Add Resource Page</summary>
+<img width="1897" height="783" alt="Add Resource Page Validation" src="https://github.com/user-attachments/assets/f494d119-97b1-4ff4-a28e-d3ad0ef43195" />
+</details>
+
+<details>
+<summary>Favourites Page</summary>
+<img width="1901" height="789" alt="Favourites Page Validation" src="https://github.com/user-attachments/assets/316352b0-2062-434c-ba25-850b77c088a4" />
+</details>
+
+<details>
+<summary>Search Page</summary>
+<img width="1887" height="786" alt="Search Page Validation" src="https://github.com/user-attachments/assets/e9359e06-36a1-47c9-a0fb-6138bdd14a19" />
+</details>
+
+<details>
+<summary>Suggest Category Page</summary>
+<img width="1889" height="785" alt="Suggest Category Page Validation" src="https://github.com/user-attachments/assets/3ef85deb-2b30-4d46-a510-901f1c4ba8fc" />
+</details>
+
+<details>
+<summary>Contact Page</summary>
+<img width="1887" height="782" alt="Contact Page Validation" src="https://github.com/user-attachments/assets/8459ec55-bc98-4450-9393-ef6b68196bfc" />
+</details>
+
+<details>
+<summary>Login Page</summary>
+<img width="1900" height="787" alt="Login Page Validation" src="https://github.com/user-attachments/assets/e27f576d-80e1-4cd2-b757-d8d373af896b" />
+</details>
+
+<details>
+<summary>Register Page</summary>
+The errors on this page are due to django-allauth
+<img width="1901" height="867" alt="Register Page Validation" src="https://github.com/user-attachments/assets/05283266-90f4-4b59-a403-4a22eb029a22" />
+</details>
+
+<details>
+<summary>Logout Page</summary>
+<img width="1891" height="785" alt="Logout Page Validation" src="https://github.com/user-attachments/assets/abd9f664-1b32-4b50-84ce-de68d8e1a097" />
+</details>
+
 ## AI Implementation
 
 I used AI tools such as Copilot throught the creation of the project. The support of AI helped greatly and sped up the development process. Here are  some ways I used AI to help with the project:
