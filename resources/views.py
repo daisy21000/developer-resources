@@ -112,7 +112,8 @@ def submit_resource(request):
                 if existing_resource_url:
                     messages.add_message(
                         request, messages.ERROR,
-                        'A resource with this URL already exists.')
+                        f'A resource with the URL "{resource.url}"'
+                        'already exists.')
                     return HttpResponseRedirect(request.META.get(
                         'HTTP_REFERER', '/'
                         ))
@@ -123,7 +124,8 @@ def submit_resource(request):
                 if existing_resource_name:
                     messages.add_message(
                         request, messages.ERROR,
-                        'A resource with this name already exists.')
+                        f'A resource with the name "{resource.name}"'
+                        ' already exists.')
                     return HttpResponseRedirect(request.META.get(
                         'HTTP_REFERER', '/'
                         ))
@@ -133,7 +135,8 @@ def submit_resource(request):
                 form.save_m2m()  # Save tags
                 messages.add_message(
                     request, messages.SUCCESS,
-                    'Resource submitted and awaiting approval.')
+                    f'Resource "{resource.name}" submitted and'
+                    ' awaiting approval.')
                 # Reset the form after successful submission
                 form = ResourceForm()
             else:
@@ -188,7 +191,8 @@ def edit_resource(request, resource_id):
                 form.save_m2m()  # Save tags
                 messages.add_message(
                     request, messages.SUCCESS,
-                    'Resource updated successfully and awaiting re-approval.')
+                    f'Resource "{resource.name}" updated successfully'
+                    ' and awaiting re-approval.')
             else:
                 messages.add_message(
                     request, messages.ERROR,
@@ -226,7 +230,7 @@ def delete_resource(request, resource_id):
         resource.delete()
         messages.add_message(
             request, messages.SUCCESS,
-            'Resource deleted successfully.')
+            f'Resource "{resource.name}" deleted successfully.')
     else:
         messages.add_message(
             request, messages.ERROR,
@@ -295,12 +299,12 @@ def favorite_resource(request, resource_id):
             resource.favorites.remove(request.user)
             messages.add_message(
                 request, messages.SUCCESS,
-                'Resource removed from favorites.')
+                f'Resource "{resource.name}" removed from favorites.')
         else:
             resource.favorites.add(request.user)
             messages.add_message(
                 request, messages.SUCCESS,
-                'Resource added to favorites.')
+                f'Resource "{resource.name}" added to favorites.')
     else:
         messages.add_message(
             request, messages.ERROR,
@@ -346,7 +350,8 @@ def suggest_category(request):
                 if existing_category:
                     messages.add_message(
                         request, messages.ERROR,
-                        'A category with this name already exists.')
+                        f'A category with the name "{category.name}"'
+                        ' already exists.')
                     return HttpResponseRedirect(request.META.get(
                         'HTTP_REFERER', '/'
                         ))
@@ -359,7 +364,8 @@ def suggest_category(request):
                 category.save()
                 messages.add_message(
                     request, messages.SUCCESS,
-                    'Category suggestion submitted and awaiting approval.')
+                    f'Category suggestion "{category.name}" submitted and'
+                    ' awaiting approval.')
                 # Reset the form after successful submission
                 form = CategoryForm()
             else:
