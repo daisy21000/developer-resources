@@ -103,5 +103,6 @@ if (contactForm) {
             messageField.focus();
             return;
         }
+        contactForm.submit();
     });
 }
