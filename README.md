@@ -494,6 +494,94 @@ The warnings in the JavaScript are due to 'const', 'let' and arrow functions not
 <img width="1897" height="865" alt="JavaScript Validation" src="https://github.com/user-attachments/assets/88b3398f-55aa-402f-953d-b6a3b47d7d22" />
 </details>
 
+#### Python
+
+I used [Code Institute's Python Linter](https://pep8ci.herokuapp.com/) to validate the Python files. Here are the results:
+
+<details>
+<summary>settings.py</summary>
+<img width="1902" height="869" alt="settings.py Validation" src="https://github.com/user-attachments/assets/56efbfd5-f0ec-4d91-b3a8-db87e80ff71c" />
+</details>
+
+<details>
+<summary>urls.py (project)</summary>
+<img width="1894" height="862" alt="urls.py Validation" src="https://github.com/user-attachments/assets/0fe75b68-aa8b-4e95-8508-357632ce779c" />
+</details>
+
+<details>
+<summary>admin.py (resources)</summary>
+<img width="1896" height="865" alt="admin.py Validation" src="https://github.com/user-attachments/assets/a095a040-8c84-46b3-919d-70b12b0c3491" />
+</details>
+
+<details>
+<summary>forms.py (resources)</summary>
+<img width="1899" height="865" alt="forms.py Validation" src="https://github.com/user-attachments/assets/4e95c124-2751-4a30-b595-1671fb54d7e4" />
+</details>
+
+<details>
+<summary>models.py (resources)</summary>
+<img width="1897" height="867" alt="models.py Validation" src="https://github.com/user-attachments/assets/91c69d7e-03c7-44e4-acd7-8438690483cd" />
+</details>
+
+<details>
+<summary>views.py (resources)</summary>
+<img width="1895" height="864" alt="views.py Validation" src="https://github.com/user-attachments/assets/13be64be-e85e-45bd-952d-3a43534f5440" />
+</details>
+
+<details>
+<summary>urls.py (resources)</summary>
+<img width="1884" height="860" alt="urls.py Validation" src="https://github.com/user-attachments/assets/84c349e7-996d-42aa-bdbd-29b250832902" />
+</details>
+
+<details>
+<summary>test_forms.py (resources)</summary>
+<img width="1893" height="860" alt="test_forms.py Validation" src="https://github.com/user-attachments/assets/6b745bfd-e3ab-400f-8bb4-7251c99c8893" />
+</details>
+
+<details>
+<summary>test_views.py (resources)</summary>
+<img width="1886" height="855" alt="test_views.py Validation" src="https://github.com/user-attachments/assets/5521937d-867f-4704-9a76-8cc48cfc467e" />
+</details>
+
+<details>
+<summary>admin.py (contact)</summary>
+<img width="1895" height="848" alt="admin.py Validation" src="https://github.com/user-attachments/assets/103ff8d2-879d-4895-80ab-5a4aa6576b66" />
+</details>
+
+<details>
+<summary>forms.py (contact)</summary>
+<img width="1886" height="856" alt="forms.py Validation" src="https://github.com/user-attachments/assets/7f906b12-fa39-45ab-b9f4-7c37233059a1" />
+</details>
+
+<details>
+<summary>models.py (contact)</summary>
+<img width="1895" height="859" alt="models.py Validation" src="https://github.com/user-attachments/assets/3f12697f-5b3c-4315-a2c0-8a6e8cdac23a" />
+</details>
+
+<details>
+<summary>views.py (contact)</summary>
+<img width="1886" height="846" alt="views.py Validation" src="https://github.com/user-attachments/assets/39ea8966-6197-4a13-b037-d3660f60ecd2" />
+</details>
+
+<details>
+<summary>urls.py (contact)</summary>
+<img width="1889" height="857" alt="urls.py Validation" src="https://github.com/user-attachments/assets/a2b20d9f-7012-48ed-958d-7be729f54937" />
+</details>
+
+<details>
+<summary>test_forms.py (contact)</summary>
+<img width="1883" height="844" alt="test_forms.py Validation" src="https://github.com/user-attachments/assets/9814fba2-20af-4451-ab40-ba5450eefc54" />=
+</details>
+
+<details>
+<summary>test_views.py (contact)</summary>
+<img width="1894" height="857" alt="test_views.py Validation" src="https://github.com/user-attachments/assets/c6f15322-266f-4a7c-a139-badec237c2fb" />
+</details>
+
+<details>
+<summary>utils.py</summary>
+<img width="1887" height="858" alt="utils.py Validation" src="https://github.com/user-attachments/assets/c2c9b633-4408-4645-afd0-4f46d0f49712" />
+</details>
 
 ## AI Implementation
 
