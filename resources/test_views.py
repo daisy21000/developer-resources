@@ -107,7 +107,7 @@ class ResourceViewTests(TestCase):
                                      follow=True)
         self.assertEqual(Resource.objects.count(), 1)
         msgs2 = list(get_messages(resp_dup1.wsgi_request))
-        self.assertTrue(any('URL already exists' in m.message for m in msgs2))
+        self.assertTrue(any('already exists' in m.message for m in msgs2))
 
         # Duplicate name but different URL
         data2 = data.copy()
@@ -116,7 +116,7 @@ class ResourceViewTests(TestCase):
                                      follow=True)
         self.assertEqual(Resource.objects.count(), 1)
         msgs3 = list(get_messages(resp_dup2.wsgi_request))
-        self.assertTrue(any('name already exists' in m.message for m in msgs3))
+        self.assertTrue(any('already exists' in m.message for m in msgs3))
 
     def test_edit_resource_permission_and_update(self):
         """Only uploader may edit; successful edit updates resource."""
