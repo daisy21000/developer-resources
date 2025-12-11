@@ -662,3 +662,9 @@ AI helped generate unit tests for the project. It specified different edge cases
 AI greatly helped me create the project. I have learned the vast benefits of AI through this project, however, there are limitaions to it. There were times where it generated code unsuitable for the project or code with bugs. Therefore, it is always essential to review and understand all code produced by AI. I have made an effort to use AI only to assist me and not to do all the work. Despite the drawbacks and difficulties, AI supported the completion of the project.
 
 ## Credits
+
+- [Code Institute](https://codeinstitute.net/) - for their help and support throughout the bootcamp
+- [Copilot](https://copilot.microsoft.com/) - for help with development, tests and user stories
+- [Bootstrap](https://getbootstrap.com/) - for help with design and components
+- [Favicon.io](https://favicon.io/) - for the favicon
+- [Google Fonts](https://fonts.google.com/) - for the fonts
