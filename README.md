@@ -483,6 +483,18 @@ The warnings in the CSS are due to CSS variables and prefixes for browser compat
 <img width="1879" height="855" alt="CSS Validation Warnings" src="https://github.com/user-attachments/assets/e2ccb120-bac4-45e5-ba18-2de009e08e5a" />
 </details>
 
+#### JavaScript
+
+I used [JSHint](https://jshint.com/) to validate the JavaScript. Here are the results:
+
+<details>
+<summary>JavaScript Validation</summary>
+The warnings in the JavaScript are due to 'const', 'let' and arrow functions not being available for older versions. This is not a major issue for this project as the use of JavaScript is minor.
+
+<img width="1897" height="865" alt="JavaScript Validation" src="https://github.com/user-attachments/assets/88b3398f-55aa-402f-953d-b6a3b47d7d22" />
+</details>
+
+
 ## AI Implementation
 
 I used AI tools such as Copilot throught the creation of the project. The support of AI helped greatly and sped up the development process. Here are  some ways I used AI to help with the project:
