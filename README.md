@@ -309,6 +309,30 @@ Users can contact through the contact page to submit any queries. After filling 
 
 I thoroughly tested the website through manual and automated testing as well as external testing and validation.
 
+### Manual Testing
+
+I manually tested the website throughout the development process. If I found any vulnerabilities, I fixed them and tested again to make sure the application is safe and secure. Through manual testing, I have confirmed that the website is fully functional.
+
+### Automated Testing
+
+With the assistance of Copilot, I made unit tests for the forms and views of both apps in my project. All of the tests pass and there was no problem found in the functionality of the website. Here is a brief overview of the tests:
+
+#### resources/test_forms.py
+
+Tests were done for the functionality of the resource and category forms to confirm how they process inputs. The tests ensured invalid input was not accepted and valid input went through without issue.
+
+#### resources/test_views.py
+
+Tests were done for the CRUD functionality of the resources, the category submission, favourites and search GET requests. The tests showed that all functionality is working as intended and users recieve feedback for actions.
+
+#### contact/test_forms.py
+
+Tests were done for the request form to confirm the functionality. The tests ensured valid and invalid inputs were handled correctly.
+
+#### contact/test_views.py
+
+Tests were done for the functionality of the contact view. The test ensured the GET and POST requests both worked as intended.
+
 ### External Testing and Validation
 
 #### Lighthouse
