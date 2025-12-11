@@ -65,52 +65,52 @@ The wireframes for the website were created using Balsamiq to map out the layout
 
 <details>
 <summary>Home Page</summary>
-<img width="839" height="575" alt="Screenshot 2025-12-09 130232" src="https://github.com/user-attachments/assets/393904e2-1509-4aff-85fb-4bd4430465ac" />
+<img width="839" height="575" alt="Home Page Wireframe" src="https://github.com/user-attachments/assets/393904e2-1509-4aff-85fb-4bd4430465ac" />
 </details>
 
 <details>
 <summary>Category Detail</summary>
-<img width="836" height="500" alt="Screenshot 2025-12-09 130258" src="https://github.com/user-attachments/assets/2a49badc-9b7d-4951-97c1-771828e3bed8" />
+<img width="836" height="500" alt="Category Detail Page Wireframe" src="https://github.com/user-attachments/assets/2a49badc-9b7d-4951-97c1-771828e3bed8" />
 </details>
 
 <details>
 <summary>Resource Modal</summary>
-<img width="838" height="500" alt="Screenshot 2025-12-09 130532" src="https://github.com/user-attachments/assets/68869281-747f-401d-b17f-cc4126e97c0d" />
+<img width="838" height="500" alt="Resource Modal Wireframe" src="https://github.com/user-attachments/assets/68869281-747f-401d-b17f-cc4126e97c0d" />
 </details>
 
 <details>
 <summary>Search Results</summary>
-<img width="835" height="501" alt="Screenshot 2025-12-09 130521" src="https://github.com/user-attachments/assets/60a0afed-e361-46ef-af49-b36362fc79fe" />
+<img width="835" height="501" alt="Search Results Page Wireframe" src="https://github.com/user-attachments/assets/60a0afed-e361-46ef-af49-b36362fc79fe" />
 </details>
 
 <details>
 <summary>Favourites</summary>
-<img width="837" height="501" alt="Screenshot 2025-12-09 130335" src="https://github.com/user-attachments/assets/7f972265-20f2-4935-8751-b9879406d714" />
+<img width="837" height="501" alt="Favourites Page Wireframe" src="https://github.com/user-attachments/assets/7f972265-20f2-4935-8751-b9879406d714" />
 </details>
 
 <details>
 <summary>Add Resource</summary>
-<img width="837" height="498" alt="Screenshot 2025-12-09 130314" src="https://github.com/user-attachments/assets/e339693a-c678-4374-8b82-3269602ec470" />
+<img width="837" height="498" alt="Add Resource Page Wireframe" src="https://github.com/user-attachments/assets/e339693a-c678-4374-8b82-3269602ec470" />
 </details>
 
 <details>
 <summary>Suggest Category</summary>
-<img width="840" height="500" alt="Screenshot 2025-12-09 130547" src="https://github.com/user-attachments/assets/0cdc67e2-3b38-4f8a-9f81-e862ae78b6ec" />
+<img width="840" height="500" alt="Suggest Category Page Wireframe" src="https://github.com/user-attachments/assets/0cdc67e2-3b38-4f8a-9f81-e862ae78b6ec" />
 </details>
 
 <details>
 <summary>Login</summary>
-<img width="838" height="502" alt="Screenshot 2025-12-09 130409" src="https://github.com/user-attachments/assets/34e45ddd-6a25-4ba5-bd35-42c4ec9c7af8" />
+<img width="838" height="502" alt="Login Page Wireframe" src="https://github.com/user-attachments/assets/34e45ddd-6a25-4ba5-bd35-42c4ec9c7af8" />
 </details>
 
 <details>
 <summary>Register</summary>
-<img width="838" height="502" alt="Screenshot 2025-12-09 130431" src="https://github.com/user-attachments/assets/fad4a4c0-40ec-4b9c-bf40-3ea703f8fbb2" />
+<img width="838" height="502" alt="Register Page Wireframe" src="https://github.com/user-attachments/assets/fad4a4c0-40ec-4b9c-bf40-3ea703f8fbb2" />
 </details>
 
 <details>
 <summary>Logout</summary>
-<img width="837" height="499" alt="Screenshot 2025-12-09 130457" src="https://github.com/user-attachments/assets/917e606b-8af4-4efb-9f22-8303db3a62d8" />
+<img width="837" height="499" alt="Logout Page Wireframe" src="https://github.com/user-attachments/assets/917e606b-8af4-4efb-9f22-8303db3a62d8" />
 </details>
 
 ## Agile
