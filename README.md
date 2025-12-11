@@ -303,7 +303,43 @@ Users can contact through the contact page to submit any queries. After filling 
 
 ## Deployment
 
+This project was deployed to Heroku. Here are the steps to deploy the project:
 
+1. Create Heroku App
+
+- Login to Heroku and click New > Create New App
+- Choose a name for the app and click 'Create App'
+
+2. Prepare for deployment
+
+- Clone the repository to VS Code (or your preferred code editor)
+- Install requirements: `pip install -r requirements.txt`
+- Make sure `DEBUG = False` in settings.py
+- Add, commit and push your changes to Github
+
+3. Set up deployment with Heroku
+
+- In the dashboard for your app, go to the Deploy tab
+- Choose Github as the deployment method
+- Search for the repository and connect it
+
+4. Configure Environment Variables
+
+- Go to the Settings tab in your Heroku app
+- Scroll to 'Config Vars'
+- Add your secret key for the `SECRET_KEY` config var
+- Add your Postgres database URL for the `DATABASE_URL` config var
+
+5. Deploy
+
+- Go back to the Deploy tab in your Heroku app
+- Scroll to 'Manual Deploy'
+- Choose 'main' as the branch
+- Click 'Deploy Branch'
+
+Your website should now be hosted by Heroku.
+
+You can find the live project here: [Developer Toolkit](https://developer-toolkit-1de11126e2a2.herokuapp.com/)
 
 ## Testing and Validation
 
