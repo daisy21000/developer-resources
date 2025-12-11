@@ -20,8 +20,6 @@
 
 - [Features](#features)
 
-- [Built With](#built-with)
-
 - [Deployment](#deployment)
 
 - [Testing and Validation](#testing-and-validation)
@@ -296,10 +294,6 @@ Users can contact through the contact page to submit any queries. After filling 
 <summary>Contact Success Message</summary>
 <img width="1897" height="871" alt="Contact Success Message" src="https://github.com/user-attachments/assets/e50438a9-d8b2-457c-8f94-d0ad27c81125" />
 </details>
-
-## Built With
-
-
 
 ## Deployment
 
