@@ -1,5 +1,11 @@
 # Developer Toolkit
 
+<img width="1918" height="870" alt="Developer Toolkit Home Page" src="https://github.com/user-attachments/assets/c7476565-dd61-419f-b9ce-416f9d0d22e8" />
+
+<p align="center">
+  <a href="https://developer-toolkit-1de11126e2a2.herokuapp.com/" target="_blank">Live Project</a>
+</p>
+
 ## Table of Contents
 
 - [Developer Toolkit](#developer-toolkit)
@@ -212,7 +218,7 @@ Logged-in users can delete their own resources using the delete button on the re
 
 <details>
 <summary>Delete Success Message</summary>
-<img width="1892" height="868" alt="Delete Success Message" src="https://github.com/user-attachments/assets/0d6d9def-9fe9-4a5e-ae4a-1122155374de" />
+<img width="1914" height="864" alt="Delete Success Message" src="https://github.com/user-attachments/assets/667a2c46-77fd-42c5-8ea4-07704ce4c5f2" />
 </details>
 
 ### Favourite Resources
@@ -301,14 +307,304 @@ Users can contact through the contact page to submit any queries. After filling 
 
 ## Testing and Validation
 
+I thoroughly tested the website through manual and automated testing as well as external testing and validation.
 
+### External Testing and Validation
+
+#### Lighthouse
+
+I ran lighthouse tests for all pages of the live site. Here are the results:
+
+<details>
+<summary>Home Page (Desktop)</summary>
+<img width="1276" height="696" alt="Home Page Lighthouse Report (Desktop)" src="https://github.com/user-attachments/assets/7a61ee8d-45a5-4087-be75-f01ee9a3866f" />
+</details>
+
+<details>
+<summary>Home Page (Mobile)</summary>
+<img width="1280" height="546" alt="Home Page Lighthouse Report (Mobile)" src="https://github.com/user-attachments/assets/2dd123fa-22b0-4ad1-aa32-de7f959675f4" />
+</details>
+
+<details>
+<summary>Add Resource Page (Desktop)</summary>
+<img width="1276" height="543" alt="Add Resource Page Lighthouse Report (Desktop)" src="https://github.com/user-attachments/assets/c1ac0692-4549-4e29-a3ae-976d9b15d52b" />
+</details>
+
+<details>
+<summary>Add Resource Page (Mobile)</summary>
+<img width="1277" height="544" alt="Add Resource Page Lighthouse Report (Mobile)" src="https://github.com/user-attachments/assets/7178a950-caa5-48cd-84fe-d02bb36c6cdd" />
+</details>
+
+<details>
+<summary>Category Detail Page (Desktop)</summary>
+<img width="1276" height="535" alt="Category Detail Page Lighthouse Report (Desktop)" src="https://github.com/user-attachments/assets/a50fb950-436d-4fb2-8458-e2f17f088fe5" />
+</details>
+
+<details>
+<summary>Category Detail Page (Mobile)</summary>
+<img width="1278" height="544" alt="Category Detail Page Lighthouse Report (Mobile)" src="https://github.com/user-attachments/assets/c48c8527-7e5d-41b9-b232-3cf62433dd8d" />
+</details>
+
+<details>
+<summary>Favourites Page (Desktop)</summary>
+<img width="1275" height="696" alt="Favourites Page Lighthouse Report (Desktop)" src="https://github.com/user-attachments/assets/7c622763-c903-4a83-8154-311a7fca600d" />
+</details>
+
+<details>
+<summary>Favourites Page (Mobile)</summary>
+<img width="1278" height="699" alt="Favourites Page Lighthouse Report (Mobile)" src="https://github.com/user-attachments/assets/f4a95a79-f6d0-4ad2-8105-a78d5d052c34" />
+</details>
+
+<details>
+<summary>Search Page (Desktop)</summary>
+<img width="1277" height="533" alt="Search Page Lighthouse Report (Desktop)" src="https://github.com/user-attachments/assets/2f049609-1634-4d0b-994f-cf6e887796cb" />
+</details>
+
+<details>
+<summary>Search Page (Mobile)</summary>
+<img width="1273" height="541" alt="Search Page Lighthouse Report (Mobile)" src="https://github.com/user-attachments/assets/4429ba4b-cefa-4163-be74-c5b5049ee5f6" />
+</details>
+
+<details>
+<summary>Suggest Category Page (Desktop)</summary>
+<img width="1274" height="540" alt="Suggest Category Page Lighthouse Report (Desktop)" src="https://github.com/user-attachments/assets/26a8b2b0-700a-4886-8777-2874f871d7ea" />
+</details>
+
+<details>
+<summary>Suggest Category Page (Mobile)</summary>
+<img width="1275" height="534" alt="Suggest Category Page Lighthouse Report (Mobile)" src="https://github.com/user-attachments/assets/1d9f1645-9d73-4dc5-b924-3ce5ba4a4b6f" />
+</details>
+
+<details>
+<summary>Contact Page (Desktop)</summary>
+<img width="1277" height="540" alt="Contact Page Lighthouse Report (Desktop)" src="https://github.com/user-attachments/assets/75814a52-d2d8-4335-8c3f-79dc72f31d0a" />
+</details>
+
+<details>
+<summary>Contact Page (Mobile)</summary>
+<img width="1273" height="524" alt="Contact Page Lighthouse Report (Mobile)" src="https://github.com/user-attachments/assets/c38c0f84-ef06-42f7-81a5-e6bd9bf9c70a" />
+</details>
+
+<details>
+<summary>Register Page (Desktop)</summary>
+<img width="1275" height="534" alt="Register Page Lighthouse Report (Desktop)" src="https://github.com/user-attachments/assets/742f1dbd-9c7c-4b30-b811-dfb7afae1636" />
+</details>
+
+<details>
+<summary>Register Page (Mobile)</summary>
+<img width="1277" height="533" alt="Register Page Lighthouse Report (Mobile)" src="https://github.com/user-attachments/assets/4ede1751-c466-4f7b-b6bb-4a79c30a623d" />
+</details>
+
+<details>
+<summary>Login Page (Desktop)</summary>
+<img width="1273" height="522" alt="Login Page Lighthouse Report (Desktop)" src="https://github.com/user-attachments/assets/bf102f37-58f5-499e-8226-75d1dd601c0d" />
+</details>
+
+<details>
+<summary>Login Page (Mobile)</summary>
+<img width="1279" height="537" alt="Login Page Lighthouse Report (Mobile)" src="https://github.com/user-attachments/assets/b8db18a4-cbd8-43e5-bbca-ec82f1c29c6c" />
+</details>
+
+<details>
+<summary>Logout Page (Desktop)</summary>
+<img width="1275" height="535" alt="Logout Page Lighthouse Report (Desktop)" src="https://github.com/user-attachments/assets/c5949c2a-42f7-4b67-96bb-c030c1f92b75" />
+</details>
+
+<details>
+<summary>Logout Page (Mobile)</summary>
+<img width="1275" height="532" alt="Logout Page Lighthouse Report (Mobile)" src="https://github.com/user-attachments/assets/fbba69fb-e7b7-4f30-b407-8fbca145b18f" />
+</details>
+
+#### HTML
+
+I used the [W3C HTML Validator](https://validator.w3.org/) to validate the HTML templates. Here are the results:
+
+<details>
+<summary>Home Page</summary>
+<img width="1899" height="793" alt="Home Page Validation" src="https://github.com/user-attachments/assets/21a5dfdb-6c2a-498c-a1d6-3324229b1ecf" />
+</details>
+
+<details>
+<summary>Category Detail Page</summary>
+<img width="1885" height="787" alt="Category Detail Page Validation" src="https://github.com/user-attachments/assets/b761cc8d-1a5b-4386-9268-33ada31c648c" />
+</details>
+
+<details>
+<summary>Add Resource Page</summary>
+<img width="1897" height="783" alt="Add Resource Page Validation" src="https://github.com/user-attachments/assets/f494d119-97b1-4ff4-a28e-d3ad0ef43195" />
+</details>
+
+<details>
+<summary>Favourites Page</summary>
+<img width="1901" height="789" alt="Favourites Page Validation" src="https://github.com/user-attachments/assets/316352b0-2062-434c-ba25-850b77c088a4" />
+</details>
+
+<details>
+<summary>Search Page</summary>
+<img width="1887" height="786" alt="Search Page Validation" src="https://github.com/user-attachments/assets/e9359e06-36a1-47c9-a0fb-6138bdd14a19" />
+</details>
+
+<details>
+<summary>Suggest Category Page</summary>
+<img width="1889" height="785" alt="Suggest Category Page Validation" src="https://github.com/user-attachments/assets/3ef85deb-2b30-4d46-a510-901f1c4ba8fc" />
+</details>
+
+<details>
+<summary>Contact Page</summary>
+<img width="1887" height="782" alt="Contact Page Validation" src="https://github.com/user-attachments/assets/8459ec55-bc98-4450-9393-ef6b68196bfc" />
+</details>
+
+<details>
+<summary>Login Page</summary>
+<img width="1900" height="787" alt="Login Page Validation" src="https://github.com/user-attachments/assets/e27f576d-80e1-4cd2-b757-d8d373af896b" />
+</details>
+
+<details>
+<summary>Register Page</summary>
+The errors on this page are due to django-allauth
+<img width="1901" height="867" alt="Register Page Validation" src="https://github.com/user-attachments/assets/05283266-90f4-4b59-a403-4a22eb029a22" />
+</details>
+
+<details>
+<summary>Logout Page</summary>
+<img width="1891" height="785" alt="Logout Page Validation" src="https://github.com/user-attachments/assets/abd9f664-1b32-4b50-84ce-de68d8e1a097" />
+</details>
+
+#### CSS
+
+I used the [Jigsaw CSS Validator](https://jigsaw.w3.org/css-validator/) to validate my CSS. Here are the results:
+
+<details>
+<summary>CSS Validation</summary>
+<img width="1881" height="686" alt="CSS Validation" src="https://github.com/user-attachments/assets/6f64a657-f852-4b40-a6ae-6f7378e72af5" />
+
+The warnings in the CSS are due to CSS variables and prefixes for browser compatibility
+
+<img width="1879" height="855" alt="CSS Validation Warnings" src="https://github.com/user-attachments/assets/e2ccb120-bac4-45e5-ba18-2de009e08e5a" />
+</details>
+
+#### JavaScript
+
+I used [JSHint](https://jshint.com/) to validate the JavaScript. Here are the results:
+
+<details>
+<summary>JavaScript Validation</summary>
+The warnings in the JavaScript are due to 'const', 'let' and arrow functions not being available for older versions. This is not a major issue for this project as the use of JavaScript is minor.
+
+<img width="1897" height="865" alt="JavaScript Validation" src="https://github.com/user-attachments/assets/88b3398f-55aa-402f-953d-b6a3b47d7d22" />
+</details>
+
+#### Python
+
+I used [Code Institute's Python Linter](https://pep8ci.herokuapp.com/) to validate the Python files. Here are the results:
+
+<details>
+<summary>settings.py</summary>
+<img width="1902" height="869" alt="settings.py Validation" src="https://github.com/user-attachments/assets/56efbfd5-f0ec-4d91-b3a8-db87e80ff71c" />
+</details>
+
+<details>
+<summary>urls.py (project)</summary>
+<img width="1894" height="862" alt="urls.py Validation" src="https://github.com/user-attachments/assets/0fe75b68-aa8b-4e95-8508-357632ce779c" />
+</details>
+
+<details>
+<summary>admin.py (resources)</summary>
+<img width="1896" height="865" alt="admin.py Validation" src="https://github.com/user-attachments/assets/a095a040-8c84-46b3-919d-70b12b0c3491" />
+</details>
+
+<details>
+<summary>forms.py (resources)</summary>
+<img width="1899" height="865" alt="forms.py Validation" src="https://github.com/user-attachments/assets/4e95c124-2751-4a30-b595-1671fb54d7e4" />
+</details>
+
+<details>
+<summary>models.py (resources)</summary>
+<img width="1897" height="867" alt="models.py Validation" src="https://github.com/user-attachments/assets/91c69d7e-03c7-44e4-acd7-8438690483cd" />
+</details>
+
+<details>
+<summary>views.py (resources)</summary>
+<img width="1895" height="864" alt="views.py Validation" src="https://github.com/user-attachments/assets/13be64be-e85e-45bd-952d-3a43534f5440" />
+</details>
+
+<details>
+<summary>urls.py (resources)</summary>
+<img width="1884" height="860" alt="urls.py Validation" src="https://github.com/user-attachments/assets/84c349e7-996d-42aa-bdbd-29b250832902" />
+</details>
+
+<details>
+<summary>test_forms.py (resources)</summary>
+<img width="1893" height="860" alt="test_forms.py Validation" src="https://github.com/user-attachments/assets/6b745bfd-e3ab-400f-8bb4-7251c99c8893" />
+</details>
+
+<details>
+<summary>test_views.py (resources)</summary>
+<img width="1886" height="855" alt="test_views.py Validation" src="https://github.com/user-attachments/assets/5521937d-867f-4704-9a76-8cc48cfc467e" />
+</details>
+
+<details>
+<summary>admin.py (contact)</summary>
+<img width="1895" height="848" alt="admin.py Validation" src="https://github.com/user-attachments/assets/103ff8d2-879d-4895-80ab-5a4aa6576b66" />
+</details>
+
+<details>
+<summary>forms.py (contact)</summary>
+<img width="1886" height="856" alt="forms.py Validation" src="https://github.com/user-attachments/assets/7f906b12-fa39-45ab-b9f4-7c37233059a1" />
+</details>
+
+<details>
+<summary>models.py (contact)</summary>
+<img width="1895" height="859" alt="models.py Validation" src="https://github.com/user-attachments/assets/3f12697f-5b3c-4315-a2c0-8a6e8cdac23a" />
+</details>
+
+<details>
+<summary>views.py (contact)</summary>
+<img width="1886" height="846" alt="views.py Validation" src="https://github.com/user-attachments/assets/39ea8966-6197-4a13-b037-d3660f60ecd2" />
+</details>
+
+<details>
+<summary>urls.py (contact)</summary>
+<img width="1889" height="857" alt="urls.py Validation" src="https://github.com/user-attachments/assets/a2b20d9f-7012-48ed-958d-7be729f54937" />
+</details>
+
+<details>
+<summary>test_forms.py (contact)</summary>
+<img width="1883" height="844" alt="test_forms.py Validation" src="https://github.com/user-attachments/assets/9814fba2-20af-4451-ab40-ba5450eefc54" />=
+</details>
+
+<details>
+<summary>test_views.py (contact)</summary>
+<img width="1894" height="857" alt="test_views.py Validation" src="https://github.com/user-attachments/assets/c6f15322-266f-4a7c-a139-badec237c2fb" />
+</details>
+
+<details>
+<summary>utils.py</summary>
+<img width="1887" height="858" alt="utils.py Validation" src="https://github.com/user-attachments/assets/c2c9b633-4408-4645-afd0-4f46d0f49712" />
+</details>
 
 ## AI Implementation
 
-I have used AI throughout the creation of this project to assist me with various different tasks.
+I used AI tools such as Copilot throught the creation of the project. The support of AI helped greatly and sped up the development process. Here are  some ways I used AI to help with the project:
 
-### User stories
+### User Stories
 
-AI helped refine user stories and write acceptance criteria and tasks. I modified them to suit the project and implemented recommendations given about the user stories to make them more effective.
+AI helped refine user stories and write acceptance criteria and tasks. I used Copilot to help me with this and then modified them to suit the project as some were not relevant. By doing so, it saved me time and helped with giving me ideas for features.
+
+### Development
+
+AI helped speed up development significantly. I used Copilot to help with repetitive tasks and commenting. It greatly helped me create view functionality, I adjusted what Copilot generated to fit the project. If it generated something I was unsure of, I asked it to explain the code and add comments. It also helped with adding docstrings and formating files according to PEP8 standards.
+
+### Debugging
+
+AI helped debug issues I had in my code such as warnings and unintended behaviour. Copilot walked me through the problems and gave solutions which I applied after making minor adjustments. It helped me understand the issues and effectively troubleshoot them.
+
+### Unit Testing
+
+AI helped generate unit tests for the project. It specified different edge cases and created tests to ensure functionality was as expected. I manually updated the tests to ensure they would run without errors, and asked Copilot to fix some bugs in the tests. In the end, all the tests were successful. AI sped up the process of creating unit tests and identifying edge cases.
+
+### Reflection
+
+AI greatly helped me create the project. I have learned the vast benefits of AI through this project, however, there are limitaions to it. There were times where it generated code unsuitable for the project or code with bugs. Therefore, it is always essential to review and understand all code produced by AI. I have made an effort to use AI only to assist me and not to do all the work. Despite the drawbacks and difficulties, AI supported the completion of the project.
 
 ## Credits
