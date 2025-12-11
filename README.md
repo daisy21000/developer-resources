@@ -32,6 +32,10 @@
 
 Developer Toolkit is a web application built with Django to assist developers with helpful resources. This project has been built with HTML, CSS, JavaScript and Bootstrap 5 for the front-end and Python and Django for the back-end. Users are able to see resources as well as being able create, update and delete their own.
 
+<p align="right">
+  <a href="#developer-toolkit">Back to Top</a>
+</p>
+
 ## UX Design
 
 ### External User's Goal
@@ -113,6 +117,10 @@ The wireframes for the website were created using Balsamiq to map out the layout
 <img width="837" height="499" alt="Logout Page Wireframe" src="https://github.com/user-attachments/assets/917e606b-8af4-4efb-9f22-8303db3a62d8" />
 </details>
 
+<p align="right">
+  <a href="#developer-toolkit">Back to Top</a>
+</p>
+
 ## Agile
 
 This project was built following the Agile methodology throughout. Using the MoSCoW prioritisaion, the most essential features were first delivered to create the MVP. After that, the rest of the features were worked on based on their importance. The user stories were managed through a [GitHub Project Board](https://github.com/users/daisy21000/projects/8) to keep track of the user stories and the current progress. Following the Agile methodology greatly enhaced development and allowed all important work to be done in a timely manner.
@@ -124,6 +132,10 @@ The user stories were labelled based on their importance:
 - **Could Have** for optional features that would enhance the project but should only be done if time allows
 
 The project board contains all the user stories, as well as their acceptance criteria and tasks. You can find the project board here: [Capstone Project Board](https://github.com/users/daisy21000/projects/8)
+
+<p align="right">
+  <a href="#developer-toolkit">Back to Top</a>
+</p>
 
 ## Features
 
@@ -295,6 +307,10 @@ Users can contact through the contact page to submit any queries. After filling 
 <img width="1897" height="871" alt="Contact Success Message" src="https://github.com/user-attachments/assets/e50438a9-d8b2-457c-8f94-d0ad27c81125" />
 </details>
 
+<p align="right">
+  <a href="#developer-toolkit">Back to Top</a>
+</p>
+
 ## Deployment
 
 This project was deployed to Heroku. Here are the steps to deploy the project:
@@ -334,6 +350,10 @@ This project was deployed to Heroku. Here are the steps to deploy the project:
 Your website should now be hosted by Heroku.
 
 You can find the live project here: [Developer Toolkit](https://developer-toolkit-1de11126e2a2.herokuapp.com/)
+
+<p align="right">
+  <a href="#developer-toolkit">Back to Top</a>
+</p>
 
 ## Testing and Validation
 
@@ -637,6 +657,10 @@ I used [Code Institute's Python Linter](https://pep8ci.herokuapp.com/) to valida
 <img width="1887" height="858" alt="utils.py Validation" src="https://github.com/user-attachments/assets/c2c9b633-4408-4645-afd0-4f46d0f49712" />
 </details>
 
+<p align="right">
+  <a href="#developer-toolkit">Back to Top</a>
+</p>
+
 ## AI Implementation
 
 I used AI tools such as Copilot throught the creation of the project. The support of AI helped greatly and sped up the development process. Here are  some ways I used AI to help with the project:
@@ -661,6 +685,10 @@ AI helped generate unit tests for the project. It specified different edge cases
 
 AI greatly helped me create the project. I have learned the vast benefits of AI through this project, however, there are limitaions to it. There were times where it generated code unsuitable for the project or code with bugs. Therefore, it is always essential to review and understand all code produced by AI. I have made an effort to use AI only to assist me and not to do all the work. Despite the drawbacks and difficulties, AI supported the completion of the project.
 
+<p align="right">
+  <a href="#developer-toolkit">Back to Top</a>
+</p>
+
 ## Credits
 
 - [Code Institute](https://codeinstitute.net/) - for their help and support throughout the bootcamp
@@ -668,3 +696,7 @@ AI greatly helped me create the project. I have learned the vast benefits of AI 
 - [Bootstrap](https://getbootstrap.com/) - for help with design and components
 - [Favicon.io](https://favicon.io/) - for the favicon
 - [Google Fonts](https://fonts.google.com/) - for the fonts
+
+<p align="right">
+  <a href="#developer-toolkit">Back to Top</a>
+</p>
