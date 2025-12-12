@@ -44,7 +44,7 @@
                 {% for u_resource in unapproved_resources %}
                     <li class="list-group-item text-center text-sm-start d-sm-flex justify-content-between align-items-center">
                         <a href="#{{ u_resource.id }}Modal" class="list-group-item-action resource-link" data-bs-toggle="modal">
-                            <h2 class="h4">{{ u_resource.name }}<span class="badge text-dark pending-approval-badge">Pending Approval</span></h2>
+                            <h2 class="h4 overflow-wrap">{{ u_resource.name }}<span class="badge text-dark pending-approval-badge">Pending Approval</span></h2>
                         </a>
                         <a href="{% url 'edit_resource' u_resource.id %}" class="btn secondary-button small-button ms-2" role="button">Edit</a>
                         <a href="#{{ u_resource.id }}DeleteModal" class="btn delete-button small-button ms-2" data-bs-toggle="modal" role="button">Delete</a>
@@ -53,7 +53,7 @@
                 {% for resource in resources %}
                     <li class="list-group-item text-center text-sm-start d-sm-flex justify-content-between align-items-center">
                         <a href="#{{ resource.id }}Modal" class="list-group-item-action resource-link" data-bs-toggle="modal">
-                            <h2 class="h4">{{ resource.name }}</h2>
+                            <h2 class="h4 overflow-wrap">{{ resource.name }}</h2>
                         </a>
                         {% if user.is_authenticated %}
                         {% if resource in favorite_resources %}
@@ -79,14 +79,15 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h3 class="modal-title fs-5" id="{{ u_resource.id }}ModalLabel">{{ u_resource.name }}</h3>
+                    <h3 class="modal-title fs-5 overflow-wrap" id="{{ u_resource.id }}ModalLabel">{{ u_resource.name }}</h3>
                     <button class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
                     <div class="alert alert-info" role="alert">
                         This resource is pending approval from an administrator.
                     </div>
-                    <p><strong>Description: </strong>{{ u_resource.description }}</p>
+                    <strong>Description: </strong>
+                    <textarea readonly class="desc-textarea" rows="4">{{ u_resource.description }}</textarea>
                     <p>
                         <strong>URL: </strong>
                         <a href="{{ u_resource.url }}">{{ u_resource.url }}</a>
@@ -112,11 +113,12 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h3 class="modal-title fs-5" id="{{ resource.id }}ModalLabel">{{ resource.name }}</h3>
+                    <h3 class="modal-title fs-5 overflow-wrap" id="{{ resource.id }}ModalLabel">{{ resource.name }}</h3>
                     <button class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <p><strong>Description: </strong>{{ resource.description }}</p>
+                    <strong>Description: </strong>
+                    <textarea readonly class="desc-textarea" rows="4">{{ resource.description }}</textarea>
                     <p>
                         <strong>URL: </strong>
                         <a href="{{ resource.url }}">{{ resource.url }}</a>
@@ -149,7 +151,7 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h3 class="modal-title fs-5" id="{{ u_resource.id }}DeleteModalLabel">Delete {{ u_resource.name }}</h3>
+                    <h3 class="modal-title fs-5 overflow-wrap" id="{{ u_resource.id }}DeleteModalLabel">Delete {{ u_resource.name }}</h3>
                     <button class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
@@ -171,7 +173,7 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h3 class="modal-title fs-5" id="{{ resource.id }}DeleteModalLabel">Delete {{ resource.name }}</h3>
+                    <h3 class="modal-title fs-5 overflow-wrap" id="{{ resource.id }}DeleteModalLabel">Delete {{ resource.name }}</h3>
                     <button class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">

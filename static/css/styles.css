@@ -168,6 +168,21 @@ a:hover {
     margin-left: 10px;
 }
 
+.desc-textarea {
+    width: 100%;
+    resize: none;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    font-family: var(--body-font);
+    margin-bottom: 15px;
+}
+
+.overflow-wrap {
+    overflow-wrap: anywhere;
+}
+
 /* Signup Page Styles */
 
 .signup ul:not(.errorlist) {

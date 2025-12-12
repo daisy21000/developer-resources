@@ -76,7 +76,7 @@
                 {% for resource in resources %}
                     <li class="list-group-item text-center text-sm-start d-sm-flex justify-content-between align-items-center">
                         <a href="#{{ resource.id }}Modal" class="list-group-item-action resource-link" data-bs-toggle="modal">
-                            <h2 class="h4">{{ resource.name }}</h2>
+                            <h2 class="h4 overflow-wrap">{{ resource.name }}</h2>
                         </a>
                         {% if user.is_authenticated %}
                         {% if resource in favorite_resources %}
@@ -103,11 +103,12 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h3 class="modal-title fs-5" id="{{ resource.id }}ModalLabel">{{ resource.name }}</h3>
+                    <h3 class="modal-title fs-5 overflow-wrap" id="{{ resource.id }}ModalLabel">{{ resource.name }}</h3>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <p><strong>Description: </strong>{{ resource.description }}</p>
+                    <strong>Description: </strong>
+                    <textarea readonly class="desc-textarea" rows="4">{{ resource.description }}</textarea>
                     <p>
                         <strong>URL: </strong>
                         <a href="{{ resource.url }}">{{ resource.url }}</a>
@@ -140,7 +141,7 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h3 class="modal-title fs-5" id="{{ resource.id }}DeleteModalLabel">Delete {{ resource.name }}</h3>
+                    <h3 class="modal-title fs-5 overflow-wrap" id="{{ resource.id }}DeleteModalLabel">Delete {{ resource.name }}</h3>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
