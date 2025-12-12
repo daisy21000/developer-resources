@@ -20,8 +20,6 @@
 
 - [Features](#features)
 
-- [Built With](#built-with)
-
 - [Deployment](#deployment)
 
 - [Testing and Validation](#testing-and-validation)
@@ -33,6 +31,10 @@
 ## Introduction
 
 Developer Toolkit is a web application built with Django to assist developers with helpful resources. This project has been built with HTML, CSS, JavaScript and Bootstrap 5 for the front-end and Python and Django for the back-end. Users are able to see resources as well as being able create, update and delete their own.
+
+<p align="right">
+  <a href="#developer-toolkit">Back to Top</a>
+</p>
 
 ## UX Design
 
@@ -67,53 +69,57 @@ The wireframes for the website were created using Balsamiq to map out the layout
 
 <details>
 <summary>Home Page</summary>
-<img width="839" height="575" alt="Screenshot 2025-12-09 130232" src="https://github.com/user-attachments/assets/393904e2-1509-4aff-85fb-4bd4430465ac" />
+<img width="839" height="575" alt="Home Page Wireframe" src="https://github.com/user-attachments/assets/393904e2-1509-4aff-85fb-4bd4430465ac" />
 </details>
 
 <details>
 <summary>Category Detail</summary>
-<img width="836" height="500" alt="Screenshot 2025-12-09 130258" src="https://github.com/user-attachments/assets/2a49badc-9b7d-4951-97c1-771828e3bed8" />
+<img width="836" height="500" alt="Category Detail Page Wireframe" src="https://github.com/user-attachments/assets/2a49badc-9b7d-4951-97c1-771828e3bed8" />
 </details>
 
 <details>
 <summary>Resource Modal</summary>
-<img width="838" height="500" alt="Screenshot 2025-12-09 130532" src="https://github.com/user-attachments/assets/68869281-747f-401d-b17f-cc4126e97c0d" />
+<img width="838" height="500" alt="Resource Modal Wireframe" src="https://github.com/user-attachments/assets/68869281-747f-401d-b17f-cc4126e97c0d" />
 </details>
 
 <details>
 <summary>Search Results</summary>
-<img width="835" height="501" alt="Screenshot 2025-12-09 130521" src="https://github.com/user-attachments/assets/60a0afed-e361-46ef-af49-b36362fc79fe" />
+<img width="835" height="501" alt="Search Results Page Wireframe" src="https://github.com/user-attachments/assets/60a0afed-e361-46ef-af49-b36362fc79fe" />
 </details>
 
 <details>
 <summary>Favourites</summary>
-<img width="837" height="501" alt="Screenshot 2025-12-09 130335" src="https://github.com/user-attachments/assets/7f972265-20f2-4935-8751-b9879406d714" />
+<img width="837" height="501" alt="Favourites Page Wireframe" src="https://github.com/user-attachments/assets/7f972265-20f2-4935-8751-b9879406d714" />
 </details>
 
 <details>
 <summary>Add Resource</summary>
-<img width="837" height="498" alt="Screenshot 2025-12-09 130314" src="https://github.com/user-attachments/assets/e339693a-c678-4374-8b82-3269602ec470" />
+<img width="837" height="498" alt="Add Resource Page Wireframe" src="https://github.com/user-attachments/assets/e339693a-c678-4374-8b82-3269602ec470" />
 </details>
 
 <details>
 <summary>Suggest Category</summary>
-<img width="840" height="500" alt="Screenshot 2025-12-09 130547" src="https://github.com/user-attachments/assets/0cdc67e2-3b38-4f8a-9f81-e862ae78b6ec" />
+<img width="840" height="500" alt="Suggest Category Page Wireframe" src="https://github.com/user-attachments/assets/0cdc67e2-3b38-4f8a-9f81-e862ae78b6ec" />
 </details>
 
 <details>
 <summary>Login</summary>
-<img width="838" height="502" alt="Screenshot 2025-12-09 130409" src="https://github.com/user-attachments/assets/34e45ddd-6a25-4ba5-bd35-42c4ec9c7af8" />
+<img width="838" height="502" alt="Login Page Wireframe" src="https://github.com/user-attachments/assets/34e45ddd-6a25-4ba5-bd35-42c4ec9c7af8" />
 </details>
 
 <details>
 <summary>Register</summary>
-<img width="838" height="502" alt="Screenshot 2025-12-09 130431" src="https://github.com/user-attachments/assets/fad4a4c0-40ec-4b9c-bf40-3ea703f8fbb2" />
+<img width="838" height="502" alt="Register Page Wireframe" src="https://github.com/user-attachments/assets/fad4a4c0-40ec-4b9c-bf40-3ea703f8fbb2" />
 </details>
 
 <details>
 <summary>Logout</summary>
-<img width="837" height="499" alt="Screenshot 2025-12-09 130457" src="https://github.com/user-attachments/assets/917e606b-8af4-4efb-9f22-8303db3a62d8" />
+<img width="837" height="499" alt="Logout Page Wireframe" src="https://github.com/user-attachments/assets/917e606b-8af4-4efb-9f22-8303db3a62d8" />
 </details>
+
+<p align="right">
+  <a href="#developer-toolkit">Back to Top</a>
+</p>
 
 ## Agile
 
@@ -126,6 +132,10 @@ The user stories were labelled based on their importance:
 - **Could Have** for optional features that would enhance the project but should only be done if time allows
 
 The project board contains all the user stories, as well as their acceptance criteria and tasks. You can find the project board here: [Capstone Project Board](https://github.com/users/daisy21000/projects/8)
+
+<p align="right">
+  <a href="#developer-toolkit">Back to Top</a>
+</p>
 
 ## Features
 
@@ -297,17 +307,81 @@ Users can contact through the contact page to submit any queries. After filling 
 <img width="1897" height="871" alt="Contact Success Message" src="https://github.com/user-attachments/assets/e50438a9-d8b2-457c-8f94-d0ad27c81125" />
 </details>
 
-## Built With
-
-
+<p align="right">
+  <a href="#developer-toolkit">Back to Top</a>
+</p>
 
 ## Deployment
 
+This project was deployed to Heroku. Here are the steps to deploy the project:
 
+1. Create Heroku App
+
+- Login to Heroku and click New > Create New App
+- Choose a name for the app and click 'Create App'
+
+2. Prepare for deployment
+
+- Clone the repository to VS Code (or your preferred code editor)
+- Install requirements: `pip install -r requirements.txt`
+- Make sure `DEBUG = False` in settings.py
+- Add, commit and push your changes to Github
+
+3. Set up deployment with Heroku
+
+- In the dashboard for your app, go to the Deploy tab
+- Choose Github as the deployment method
+- Search for the repository and connect it
+
+4. Configure Environment Variables
+
+- Go to the Settings tab in your Heroku app
+- Scroll to 'Config Vars'
+- Add your secret key for the `SECRET_KEY` config var
+- Add your Postgres database URL for the `DATABASE_URL` config var
+
+5. Deploy
+
+- Go back to the Deploy tab in your Heroku app
+- Scroll to 'Manual Deploy'
+- Choose 'main' as the branch
+- Click 'Deploy Branch'
+
+Your website should now be hosted by Heroku.
+
+You can find the live project here: [Developer Toolkit](https://developer-toolkit-1de11126e2a2.herokuapp.com/)
+
+<p align="right">
+  <a href="#developer-toolkit">Back to Top</a>
+</p>
 
 ## Testing and Validation
 
 I thoroughly tested the website through manual and automated testing as well as external testing and validation.
+
+### Manual Testing
+
+I manually tested the website throughout the development process. If I found any vulnerabilities, I fixed them and tested again to make sure the application is safe and secure. Through manual testing, I have confirmed that the website is fully functional.
+
+### Automated Testing
+
+With the assistance of Copilot, I made unit tests for the forms and views of both apps in my project. All of the tests pass and there was no problem found in the functionality of the website. Here is a brief overview of the tests:
+
+#### resources/test_forms.py
+
+Tests were done for the functionality of the resource and category forms to confirm how they process inputs. The tests ensured invalid input was not accepted and valid input went through without issue.
+
+#### resources/test_views.py
+
+Tests were done for the CRUD functionality of the resources, the category submission, favourites and search GET requests. The tests showed that all functionality is working as intended and users recieve feedback for actions.
+
+#### contact/test_forms.py
+
+Tests were done for the request form to confirm the functionality. The tests ensured valid and invalid inputs were handled correctly.
+
+#### contact/test_views.py
+
+Tests were done for the functionality of the contact view. The test ensured the GET and POST requests both worked as intended.
 
 ### External Testing and Validation
 
@@ -583,6 +657,10 @@ I used [Code Institute's Python Linter](https://pep8ci.herokuapp.com/) to valida
 <img width="1887" height="858" alt="utils.py Validation" src="https://github.com/user-attachments/assets/c2c9b633-4408-4645-afd0-4f46d0f49712" />
 </details>
 
+<p align="right">
+  <a href="#developer-toolkit">Back to Top</a>
+</p>
+
 ## AI Implementation
 
 I used AI tools such as Copilot throught the creation of the project. The support of AI helped greatly and sped up the development process. Here are  some ways I used AI to help with the project:
@@ -607,4 +685,18 @@ AI helped generate unit tests for the project. It specified different edge cases
 
 AI greatly helped me create the project. I have learned the vast benefits of AI through this project, however, there are limitaions to it. There were times where it generated code unsuitable for the project or code with bugs. Therefore, it is always essential to review and understand all code produced by AI. I have made an effort to use AI only to assist me and not to do all the work. Despite the drawbacks and difficulties, AI supported the completion of the project.
 
+<p align="right">
+  <a href="#developer-toolkit">Back to Top</a>
+</p>
+
 ## Credits
+
+- [Code Institute](https://codeinstitute.net/) - for their help and support throughout the bootcamp
+- [Copilot](https://copilot.microsoft.com/) - for help with development, tests and user stories
+- [Bootstrap](https://getbootstrap.com/) - for help with design and components
+- [Favicon.io](https://favicon.io/) - for the favicon
+- [Google Fonts](https://fonts.google.com/) - for the fonts
+
+<p align="right">
+  <a href="#developer-toolkit">Back to Top</a>
+</p>
