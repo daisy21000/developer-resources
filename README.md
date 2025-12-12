@@ -171,7 +171,7 @@ Through the list of categories in the home page, the user can find resources rel
 
 <details>
 <summary>Resource Modal</summary>
-<img width="1918" height="868" alt="Resource Modal" src="https://github.com/user-attachments/assets/72e62d00-8117-4528-ba02-2512581fb86c" />
+<img width="1913" height="859" alt="Resource Modal" src="https://github.com/user-attachments/assets/f6a6d8d1-fee9-4ee8-ac52-9f7b1ae60f07" />
 </details>
 
 <details>
